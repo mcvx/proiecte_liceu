@@ -1,0 +1,1 @@
+Numărul soluţiilor, adică numărul permutărilor de <span class="hgl red">n</span> fiind egal cu <span class="hgl red">n!</span>, ordinul de complexitate al algoritmului de rezolvare care este <span class="hgl blue">O(n!)</span>, algoritmul numindu-se factorial. 

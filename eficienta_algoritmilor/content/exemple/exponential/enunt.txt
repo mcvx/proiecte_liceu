@@ -1,0 +1,1 @@
+Se consideră <span class="hgl red">n</span> natural nenul dat. Să se genereze toate numerele care, transformate în baza <span class="hgl red">2</span>, au exact <span class="hgl red">n</span> cifre. 

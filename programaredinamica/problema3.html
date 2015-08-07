@@ -1,0 +1,223 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Programare dinamica - Problema 3</title>
+	
+	<script type="text/javascript" src="js/	jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/highlight.pack.js"></script>
+	<script type="text/javascript" src="js/loadCpp.js"></script>
+	<script>
+		$(document).ready(function() {
+			loadCpp("cpp/p3.cpp", "#sursa3");
+		});
+	</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/github.css" rel="stylesheet" type="text/css"/>
+	
+</head>
+
+<body class="impress-not-supported">
+
+	<div id="nav">
+		<ul>
+			<li><a href="introducere.html"><span class="icon info"></span>Introducere</a></li>
+			<li><a href="problema1.html"><span class="icon html"></span>Problema 1</a></li>
+			<li><a href="problema2.html"><span class="icon html"></span>Problema 2</a></li>
+			<li><a href="problema3.html"><span class="icon html"></span>Problema 3</a></li>
+			<li><a href="problema4.html"><span class="icon html"></span>Problema 4</a></li>
+			<li><a href="bibliografie.html"><span class="icon catalogue"></span>Bibliografie</a></li>
+		</ul>
+	</div>
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+	
+	<div id="impress">
+		
+		<div class="step" data-x="0" data-y="0" data-z="150" data-rotate="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+			<h1 class="title">Distanta Levenshtein</h1>
+		</div>
+		
+		<div class="step" data-x="200" data-y="-440" data-z="1" data-rotate="-15" data-rotate-x="40" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Enunţ</h3>
+			<span class="text2">
+				Fie un şir oarecare de caractere. Asupra lui definim următoarele 3 operaţii:
+				<ul class="lista">
+					<li><hgl>inserare</hgl>: pe o poziţie oarecare se adaugă un caracter oarecare</li>
+					<li><hgl>ştergere</hgl>: se şterge caracterul de pe o poziţie oarecare din şir</li>
+					<li><hgl>înlocuire</hgl>: se înlocuieşte caracterul de pe o poziţie oarecare din şir cu orice alt caracter.</li>
+				</ul>
+				Se dau două şiruri <hgl>S1</hgl> şi <hgl>S2</hgl> conţinând doar litere mici ale alfabetului englez şi având <hgl>N</hgl> şi, respectiv, <hgl>M</hgl> caractere. Distanţa de editare a celor două şiruri este numărul minim de operaţii definite mai sus ce trebuie aplicat asupra primului şir pentru a-l transforma în cel de-al doilea şir. Acelaşi tip de operaţie poate fi aplicat de mai multe ori.
+			</span>
+		</div>
+		
+		<div class="step" data-x="850" data-y="120" data-z="1" data-rotate="-48" data-rotate-x="-30" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title">Cerinţă</h2>
+			<span class="text">
+				Aflaţi distanţa de editare a celor doua şiruri.
+			</span>
+		</div>
+		
+		<div class="step" data-x="600" data-y="-320" data-z="1" data-rotate="48" data-rotate-x="-30" data-rotate-y="20" data-scale="0.5">
+			<h3 class="title">Date de intrare</h3>
+			<span class="text2">
+				Pe prima linie a fişierului de intrare <hgl>in.txt</hgl> se află doua numere întregi: <hgl>N</hgl> si <hgl>M</hgl>. Pe a doua linie a fişierului se află <hgl>N</hgl> litere mici din alfabetul englez reprezentând şirul <hgl>S1</hgl>. Pe a treia linie a fişierului se află <hgl>M</hgl> litere mici din alfabetul englez ce reprezintă şirul <hgl>S2</hgl>.
+			</span>
+			<h3 class="title">Date de ieşire</h3>
+			<span class="text2">
+				În fişierul de ieşire <hgl>out.txt</hgl> se va afla un singur număr întreg reprezentând distanţa de editare a celor doua şiruri.
+			</span>
+		</div>
+		
+		<div class="step" data-x="-100" data-y="540" data-z="1" data-rotate="-15" data-rotate-x="0" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Exemplu</h3>
+			<span class="text2">
+				<table id="exemplu2">
+					<tr>
+						<th>in.txt</th>
+						<th>out.txt</th>
+						<th>Explicatie</th>
+					</tr>
+					<tr>
+						<td>5 6<br/>
+							harpa<br/>
+							armura
+						</td>
+						<td>4</td>
+						<td>
+							O posibilă modalitate de a transforma şirul <hgl>harpa</hgl> în <hgl>armura</hgl> folosind 4 operaţii este:
+							<ul class="lista">
+								<li>ştergem litera <hgl>h</hgl> din primul şir</li>
+								<li>înlocuim litera <hgl>p</hgl> cu litera<hgl>m</hgl></li>
+								<li>adăugăm litera <hgl>u</hgl> înainte de ultima literă din primul şir</li>
+								<li>adăugăm litera <hgl>r</hgl> înainte de ultima literă din primul şir</li>
+							</ul>
+						</td>
+					</tr>
+					<tr>
+						<td>5 5<br/>
+							carte<br/>
+							antet
+						</td>
+						<td>3</td>
+						<td></td>
+					</tr>
+				</table>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-400" data-y="-340" data-z="1" data-rotate="0" data-rotate-x="150" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Descrierea soluţiei</h3>
+			<span class="text">
+				Această problemă se poate rezolva folosind <hgl>formula de recurenţă Levenshtein</hgl>. Avem de calculat numărul minim de paşi pe care trebuie să îl parcurgem pentru a ajunge de la un şir de caractere la altul. Pentru aceasta, definim cele trei operaţii menţionate mai sus: ştergerea unui caracter, adăugarea unui caracter şi interschimbarea unui caracter cu altul. După fiecare parcurgere, rezultatul va fi memorat într-un tablou bidimensional, o matrice, numită formal dinamică. Rezultatul final, ceea ce se va afişa în fişierul <hgl>out.txt</hgl>, este elementul care se găseşte pe linia <hgl>m+1</hgl> şi coloana <hgl>n+1</hgl> al dinamicei.
+			</span>
+		</div>
+		
+		<div class="step" data-x="540" data-y="300" data-z="1" data-rotate="90" data-rotate-x="90" data-rotate-y="35" data-scale="0.5">
+			<span class="text">
+				Spre exemplu, încercăm transformarea cuvântului <hgl>sac</hgl> în cuvântul <hgl2>mare</hgl2>. Pentru aceasta, se vor realiza următoarele operaţii:
+				<ul class="lista">
+					<li><hgl>sac</hgl> => <hgl2>mac</hgl2> (schimbarea literei <hgl>s</hgl> cu litera <hgl>m</hgl>)</li>
+					<li><hgl>mac</hgl> => <hgl2>mar</hgl2> (schimbarea literei <hgl>c</hgl> cu litera <hgl>r</hgl>)</li>
+					<li><hgl>mar</hgl> => <hgl2>mare</hgl2> (adăugarea literei <hgl>e</hgl>)</li>
+				</ul>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-640" data-y="400" data-z="1" data-rotate="-35" data-rotate-x="0" data-rotate-y="35" data-scale="0.5">
+			<span class="text">
+				Putem defini cele trei operaţii elementare prin următoarea relaţie de recurenţă: <br/>
+				<hgl>lev<sub>(a,b)</sub>(i, j) = </hgl>
+				<ul class="lista">
+					<li><hgl>max(i, j)</hgl>, daca <hgl2>min(i, j) = 0</hgl2></li>
+					<li><hgl>min</hgl>(<hgl>lev<sub>(a,b)</sub>(i-1, j)+1</hgl>, <hgl2>lev<sub>(a,b)</sub>(i, j-1)+1</hgl2>, <hgl>lev<sub>(a,b)</sub>(i-1, j-1)+[a<sub>i</sub>≠b<sub>j</sub>]</hgl>), altfel</li>
+				</ul>
+				Prima ramură a recurenţei reprezintă defapt iniţializarea matricei. 
+			</span>
+		</div>
+		
+		<div class="step" data-x="-740" data-y="0" data-z="1" data-rotate="45" data-rotate-x="0" data-rotate-y="35" data-scale="0.5">
+			<span class="text2" style="font-size: 30px;">
+				Cele trei operaţii se definesc astfel:
+				<ul class="lista">
+					<li><hgl>lev<sub>(a,b)</sub>(i-1, j)+1</hgl>: ştergerea unui element</li>
+					<li><hgl>lev<sub>(a,b)</sub>(i, j-1)+1</hgl>: adăugarea unui element</li>
+					<li><hgl>lev<sub>(a,b)</sub>(i-1, j-1)+[a<sub>i</sub>≠b<sub>j</sub>]</hgl>: interschimbarea elementului <hgl>ai</hgl> cu <hgl>bj</hgl>, dacă acestea două sunt diferite. <hgl>[a<sub>i</sub>≠b<sub>j</sub>]</hgl> are valoarea <hgl>1</hgl> dacă <hgl2>a<sub>i</sub>≠b<sub>j</sub></hgl2> , şi <hgl>0</hgl> dacă <hgl2>a<sub>i</sub>= b<sub>j</sub></hgl2>.</li>
+				</ul>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-140" data-y="200" data-z="1" data-rotate="-45" data-rotate-x="26" data-rotate-y="35" data-scale="0.5">
+			<span class="text2">
+				<table id="exemplu31" style="float: right; margin: 13px 0 30px 30px;">
+					<tr>
+						<td></td><td></td><td>0</td><td>1</td><td>2</td><td>3</td>
+					</tr>
+					<tr>
+						<td></td><td></td><td></td><td>s</td><td>a</td><td>c</td>
+					</tr>
+					<tr>
+						<td>0</td><td></td><td>0</td><td>1</td><td>2</td><td>3</td>
+					</tr>
+					<tr>
+						<td>1</td><td>m</td><td>1</td><td>1</td><td>2</td><td>3</td>
+					</tr>
+					<tr>
+						<td>2</td><td>a</td><td>2</td><td>2</td><td>1</td><td>2</td>
+					</tr>
+					<tr>
+						<td>3</td><td>r</td><td>3</td><td>3</td><td>2</td><td>2</td>
+					</tr>
+					<tr>
+						<td>4</td><td>e</td><td>4</td><td>4</td><td>3</td><td>3</td>
+					</tr>
+				</table>
+				Observăm că la fiecare pas avem nevoie doar de <hgl>două linii</hgl>, linia curentă si cea dinaintea ei. Pentru a optimiza memoria utilizată, putem folosi o matrice cu doar <hgl>două linii</hgl>, construind alternativ pe fiecare din cele două linii. Pentru aceasta, vom folosi o variabilă booleană, care va avea alternativ valoarea <hgl>true</hgl>, respectiv <hgl>false</hgl>.
+			</span>
+		</div>
+		
+		<div class="step" data-x="300" data-y="240" data-z="1" data-rotate="0" data-rotate-x="45" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title">Complexitatea algoritmului</h2>
+			<span class="text">
+				Considerând optimizarea adusă anterior bazată pe observaţia că se folosesc doar două rânduri din matrice pentru luarea unei decizii, tabloul alocat va avea <hgl>două linii</hgl> şi <hgl>n coloane</hgl>, <hgl>n</hgl> fiind lungimea primului şir. Pe lângă tabloul-dinamică, mai avem nevoie de două şiruri de caractere pentru memorarea şirurilor date în problemă.
+Luând ca operaţie elementară atribuirea, complexitatea algoritmului este <hgl2>O(n*m)</hgl2>, deci spunem că este un <hgl>algoritm pătratic</hgl>.
+			</span>
+		</div>
+			
+		<div class="step" data-x="100" data-y="-240" data-z="1" data-rotate="0" data-rotate-x="90" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title"><a href="sursa3.html" target="_blank">&raquo; Sursă C++ &laquo;</a></h2>
+			<div id="sursa3" class="syntax">
+			</div>
+		</div>
+		
+		<div id="overview" class="step step-overview" data-x="0" data-y="0" data-scale="2">
+		</div>
+
+	</div>
+	
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+	<script src="js/impress.js"></script>
+	<script>impress().init();</script>
+
+</body>
+
+</html>

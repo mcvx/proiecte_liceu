@@ -1,0 +1,14 @@
+char s[26], aux;
+cin.getline(s, 26);         // iostream.h, fstream.h
+int n = strlen(s); 		    // string.h
+
+// sortare prin metoda selecţiei minimului
+for(int i = 0, j; i <= n - 2; i++)
+    for(j = i + 1; j <= n - 1; j++)
+		if (s[i] < s[j]) {
+		    aux=s[i];
+		    s[i]=s[j];
+		    s[j]=aux;
+		}
+		
+cout << s;

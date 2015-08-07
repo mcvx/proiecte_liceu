@@ -1,0 +1,158 @@
+<h1>Randament</h1>
+<div class="dots"></div>
+<dl id="accordion2" class="accordion">
+
+	<dt><span>Ciclul ideal Diesel</span></dt>
+	<dd>
+		<div class="block">
+			<img class="fll" src="images/cicluldiesel.png" alt="" />
+			<ul class="lst flr">
+				<li>Timpul I - <span style="color: #3CB371">admisia</span></li>
+				<li>Timpul II - <span style="color: #FF7F00">compresia</span></li>
+				<li>Timpul III - <span style="color: #EE0000">arderea</span> si <span style="color: #912CEE">detenta</span></li>
+				<li>Timpul VI - <span style="color: #007FFF">evacuarea</span></li>
+			</ul>
+			<span class="flr box2" style="text-align: center;"><span class="blue">Raportul de compresie</span> este:</br>
+				<span class="blue">&epsilon; = <span class="fractie"><span class="nr">V<sub>1</sub></span>&frasl;<span class="num">V<sub>2</sub></span></span></span>
+			</span>
+			<span class="flr box2" style="text-align: center;"><span class="blue">Raportul de destindere</span> este:</br>
+				<span class="blue">&rho; = <span class="fractie"><span class="nr">V<sub>3</sub></span>&frasl;<span class="num">V<sub>2</sub></span></span></span>
+			</span>
+			<span class="flr box2">
+				<span class="blue">Ciclul Diesel este format din:</br>
+       				 	- 2 adiabate</br>
+        				- 1 izocora</br>
+						- 1 izobara
+				</span>
+			</span>
+		</div>
+		<div class="block">
+			<ul id="faza" style="width: 520px; height: 215px;">
+				<li>
+					<span style="color: #3CB371">
+						Admisia &rarr; proces izobar</br>
+						<span style="padding-left: 108px;">Q<sub>01</sub> = &nu;C<sub>p</sub>(T<sub>1</sub> - T<sub>0</sub>)</span></br>
+						<span style="padding-left: 108px;">L<sub>01</sub> = p<sub>1</sub>(V<sub>1</sub> - V<sub>2</sub>)</span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #FF7F00">
+						Compresia &rarr; proces adiabatic</br>
+						<span style="padding-left: 131px;">L<sub>12</sub> = -&Delta;U<sub>12</sub> = -&nu;C<sub>v</sub>(T<sub>2</sub> - T<sub>1</sub>)</span></br>
+						<span style="padding-left: 131px;">Q<sub>12</sub> = 0</span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #EE0000">
+						Arderea &rarr; proces izobar</br>
+						<span style="padding-left: 109px;">L<sub>23</sub> = p<sub>2</sub>(V<sub>3</sub> - V<sub>2</sub>)</span></br>
+						<span style="padding-left: 109px;">Q<sub>23</sub> = &nu;C<sub>p</sub>(T<sub>3</sub> - T<sub>2</sub>)</span></br>
+						<span>- caldura primita: Q<sub>1</sub> = Q<sub>23</sub></span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #912CEE">
+						Detenta &rarr; proces adiabatic</br>
+						<span style="padding-left: 131px;">L<sub>34</sub> = -&Delta;U<sub>34</sub> = -&nu;C<sub>v</sub>(T<sub>4</sub> - T<sub>3</sub>)</span></br>
+						<span style="padding-left: 131px;">Q<sub>34</sub> = 0</span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #007FFF">
+						Evacuarea &rarr; proces izocor(41) si proces izobar(10)</br>
+						<span style="padding-left: 135px;">Q<sub>41</sub> = -&nu;C<sub>v</sub>(T<sub>4</sub> - T<sub>1</sub>)</span></br>
+						<span style="padding-left: 135px;">L<sub>41</sub> = 0</span></br>
+						<span style="padding-left: 135px;">Q<sub>10</sub> = -&nu;C<sub>p</sub>(T<sub>1</sub> - T<sub>0</sub>)</span></br>
+						<span style="padding-left: 135px;">L<sub>10</sub> = p<sub>1</sub>(V<sub>2</sub> - V<sub>1</sub>)</span></br>
+						<span>- caldura cedata: Q<sub>2</sub> = Q<sub>41</sub></span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</dd>
+
+	<dt><span>Demonstrarea formulei randamentului ciclului Diesel</span></dt>
+	<dd>
+		<img class="fll" src="images/cicluldiesel.png" alt="" />
+		<span class="box2 flr">
+			&eta; = 1 - <span class="fractie"><span class="nr">|Q<sub>ced</sub>|</span>&frasl;<span class="num">Q<sub>abs</sub></span></span></br>
+			Q<sub>abs</sub> = Q<sub>23</sub> = &nu;C<sub>p</sub>(T<sub>3</sub> - T<sub>2</sub>) = &nu; <span class="fractie"><span class="nr">&gamma;R</span>&frasl;<span class="num">&gamma;-1</span></span> (T<sub>3</sub> - T<sub>2</sub>)</br>
+			|Q<sub>ced</sub> = |Q<sub>41</sub>| = &nu;C<sub>v</sub>(T<sub>4</sub> - T<sub>1</sub>) = &nu; <span class="fractie"><span class="nr">R</span>&frasl;<span class="num">&gamma;-1</span></span> (T<sub>4</sub> - T<sub>1</sub>)</br>
+			&eta; = 1 - <span class="fractie"><span class="nr">T<sub>4</sub> - T<sub>1</sub></span>&frasl;<span class="num">&gamma;(T<sub>3</sub> - T<sub>2</sub></span>)</span></br>
+			<span class="blue">1-2: </span> T<sub>1</sub>V<sub>1</sub><sup>&gamma;-1</sup> = T<sub>2</sub>V<sub>2</sub><sup>&gamma;-1</sup> &rArr; <span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span>
+			= (<span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">V<sub>1</sub></span></span>)<sup>&gamma;-1</sup> = <span class="fractie"><span class="nr">1</span>&frasl;<span class="num">&epsilon;<sup>&gamma;</sup> - 1</span></span></br>
+			<span class="blue">2-3: </span> <span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span> = <span class="fractie"><span class="nr">V<sub>3</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span> 
+			&rArr; <span class="fractie"><span class="nr">V<sub>3</sub></span>&frasl;<span class="num">V<sub>2</sub></span></span> = <span class="fractie"><span class="nr">T<sub>3</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span> = &rho;</br>
+			<span class="blue">3-4: </span> T<sub>3</sub>V<sub>3</sub><sup>&gamma;-1</sup> = T<sub>4</sub>V<sub>1</sub><sup>&gamma;-1</sup> &rArr; <span class="fractie"><span class="nr">T<sub>4</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span>
+			= (<span class="fractie"><span class="nr">V<sub>1</sub></span>&frasl;<span class="num">V<sub>3</sub></span></span>)<sup>&gamma;-1</sup> = (<span class="fractie"><span class="nr">&gamma;</span>&frasl;<span class="num">&rho;</span></span>)<sup>&gamma;-1</sup></br>
+			<span class="blue">4-1: </span> <span class="fractie"><span class="nr">p<sub>4</sub></span>&frasl;<span class="num">T<sub>4</sub></span></span> = <span class="fractie"><span class="nr">p<sub>1</sub></span>&frasl;<span class="num">T<sub>1</sub></span></span></br>
+			<span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span> &bull; <span class="fractie"><span class="nr">T<sub>3</sub></span>&frasl;<span class="num">T<sub>4</sub></span></span> = 
+			(<span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">V<sub>1</sub></span></span> &bull; <span class="fractie"><span class="nr">V<sub>1</sub></span>&frasl;<span class="num">V<sub>3</sub></span></span>)<sup>&gamma;-1</sup> = 
+			(<span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">V<sub>3</sub></span></span>)<sup>&gamma;-1</sup> = <span class="fractie"><span class="nr">1</span>&frasl;<span class="num">&rho;<sup>&gamma;</sup>-1</span></span></br>
+			&rArr; <span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>4</sub></span></span> = (<span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">V<sub>3</sub></span></span>)<sup>&gamma;-1</sup> &bull;  
+			<span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span> = (<span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span>)<sup>&gamma;-1</sup> &bull; 
+			<span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span> = (<span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span>)<sup>&gamma;</sup> = 
+			<span class="fractie"><span class="nr">1</span>&frasl;<span class="num">&rho;<sup>&gamma;</sup></span></span></br>
+			&eta; = 1 - <span class="fractie"><span class="nr">T<sub>4</sub>(1 - 
+				<span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>4</sub></span></span>)
+			</span>&frasl;<span class="num">&gamma;T<sub>3</sub>(1 -
+				<span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span>)
+			</span></span> = 1 - <span class="fractie"><span class="nr">&rho;<sup>&gamma;</sup> - 1</span>&frasl;<span class="num">&gamma;&epsilon;<sup>&gamma;-1</sup>(&rho; - 1)</span></span>
+		</span>
+	</dd>
+
+	<dt><span>Alte caracteristici</span></dt>
+	<dd>
+		<div class="block">
+			<h2 style="margin-bottom: 10px; margin-left: 15px; width: 600px;">Avantaje si dezavantaje ale motorului Diesel</h2>
+			<img class="flr" style="margin-top: 10px; margin-left: 15px; width: 50%;" src="images/grf2.png" alt="" />
+			<span class="fll box2" style="margin-left: 15px; width: 45%; margin-top: 47px;">
+				&nbsp&nbsp&nbspIntrucat raportul de compresie la ciclul Diesel este mai mare decat la ciclul Otto, putand ajunge chiar la 20, randamentul motorului
+				Diesel este mai mare decat al motorului Otto.
+			</span>
+			<span class="box2 boxspc" style="width: 863px; margin-left: 15px; margin-top: 20px;">
+				&nbsp&nbsp&nbsp<span class="blue">Avantajele motorului Diesel:</span> dezvolta putere mai mare, produce mai putine noxe, foloseste combustibil inferior, are timp de viata mai mare decat motorul Otto.</br>
+				&nbsp&nbsp&nbsp<span class="blue">Dezavantajele motorului Diesel:</span> este mai greu, costul de productie este mai mare, consuma o parte din lucrul mecanic util pentru antrenarea dispozitivului care asigura
+				pulverizarea combustibilului, necesita un sistem de preincalzire, are viteza de rotatie mica.
+			</span>
+			<h2 style="margin-top: 35px; margin-bottom: 0px; margin-left: 15px; width: 600px;">Marirea randamentului motorului Diesel</h2>
+			<ul class="list">
+				<li>folosirea aerului comprimat la admisie</li>
+				<li>folosirea unui racitor intermediar pentru aerul introdus in cilindri</li>
+				<li>folosirea camerei de precombustie</li>
+				<li>combinarea motorului Diesel cu alte tipuri de motoare</li>
+			</ul>
+			
+			<h2 style="margin-top: 35px; margin-bottom: 0px; margin-left: 15px; width: 600px;">Motorul Turbo-Diesel</h2>
+			<span class="box2 boxspc" style="width: 863px; margin-left: 15px; margin-top: 20px;">
+				&nbsp&nbsp&nbspPutem mari puterea motorului prin redirectionarea gazelor evacuate de o turbina catre o turbina rotativa ce actioneaza o alta turbina 
+				ce introduce aer atmosferic la o presiune de 1,5 bar in cilindru.</br>
+				&nbsp&nbsp&nbspEfecte: micsorarea volumului si greutatii motorului; o mai buna accelerare, franare si manipulare a masinii.
+			</span>
+			<img src="images/turbo.png" class="fll" style="width: 870px; margin-top: 10px; margin-left: 23px;" alt="" />
+		</div>
+	</dd>
+
+</dl>
+<script>
+$(document).ready(function() {
+	$('.accordion dd').hide();
+	$('.accordion dd:first-of-type').show();
+	$('.accordion dt').click(function(){
+		$('.accordion dd').hide();
+		$(this).next().show();
+		return false;
+	});
+	
+	$('#faza').anythingSlider({
+		navigationSize      : 5,     // Set this to the maximum number of visible navigation tabs; false to disable
+		navigationFormatter : function(index, panel){ // Format navigation labels with text
+			return ['Admisia', 'Compresia', 'Arderea', 'Detenta', 'Evacuarea'][index - 1];
+		},
+		onSlideComplete: function(slider) {
+			// keep the current navigation tab in view
+			slider.navWindow( slider.currentPage );
+		}
+	});
+});
+</script>

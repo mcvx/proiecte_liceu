@@ -1,0 +1,94 @@
+<h1>Constructia motoarelor Otto si Diesel</h1>
+<div class="dots"></div>
+<p style="margin-bottom: 5px;">&nbsp&nbsp&nbsp&nbsp<span class="blue">Componentele fixe</span> sunt:</p>
+<ul class="ulist">
+	<li>blocul motor</li>
+	<li>chiulasa</li>
+	<li>cilindrul motor</li>
+	<li>galeria de admisie</li>
+	<li>galeria de evacuare</li>
+	<li>lagarele paliere impreuna cu cuzinetii lagarelor paliere</li>
+</ul></br>
+<p style="margin-bottom: 5px;">&nbsp&nbsp&nbsp&nbsp<span class="blue">Componentele mobile</span> sunt:</p>
+<ul class="ulist">
+	<li>pistonul</li>
+	<li>segmentii</li>
+	<li>boltul</li>
+	<li>biela impreuna cu cuzinetii de biela</li>
+	<li>arborele cotit</li>
+	<li>volantul impreuna cu amortizorul oscilatiilor de tensiune</li>
+</ul></br>
+<div class="dots"></div>
+<ul id="slider" style="width: 880px;">
+	<li>
+		<h2>Blocul motor</h2>
+		<div class="box first">&nbsp&nbsp&nbsp<span class="blue">Blocul motor</span> este sistemul de rezistenta al motorului si are <span class="blue">rolul de schelet</span>
+		pe care se sustin celelalte componente. El este fixat rigid de cadrul masinii.</br>
+		&nbsp&nbsp&nbspBlocul motor are 2 parti: <span class="blue">blocul cilindrilor</span>, partea superioara, si <span class="blue">carter-ul</span>, partea inferioara.</br>
+		&nbsp&nbsp&nbspPoate fi piesa monobloc sau componenta demontabila a motorului.
+		</div>
+		<div class="second">
+			<img src="images/blocmotor.jpg" style="	width: 400px; margin-left: 45px;" alt=""/>
+		</div>
+		<div class="boxspc first">
+			<p style="margin-bottom: 5px; margin-left: 0;">&nbsp&nbsp&nbspBlocul motor este de o mare diversitate constructiva, avand forma adaptata dupa pozitia cilindrilor fata de axa longitudinala:</p>
+			<ul class="ulist">
+				<li><a href="images/leng.jpg" class="lbpz">motoare cu cilindrii in linie</a></li>
+				<li><a href="images/veng.jpg" class="lbpz">motoare cu cilindrii in V</a></li>
+				<li><a href="images/ueng.jpg" class="lbpz">motoare cu cilindrii in U</a></li>
+				<li><a href="images/xeng.gif" class="lbpz">motoare cu cilindrii in X</a></li>
+				<li><a href="images/weng.jpg" class="lbpz">motoare cu cilindrii in W</a></li>
+				<li><a href="images/heng.jpg" class="lbpz">motoare cu cilindrii in H</a></li>
+				<li><a href="images/openg.jpg" class="lbpz">motoare cu cilindrii si pistoanele opuse, boxer</a></li>
+				<li><a href="images/seng.jpg" class="lbpz">motoare cu cilindrii asezati in stea, cu precadere in aviatie</a></li>
+				<li><a href="images/teng.jpg" class="lbpz">motoare cu cilindrii &Delta;, folosite la caile ferate si vapoare englezesti</a></li>
+			</ul>
+		</div>
+	</li>
+	<li>
+		<h2>Sistemul biela-manivela</h2>
+		<div class="box first">&nbsp&nbsp<span class="blue">Piesele mobile ale motorului</span> compun doua mecanisme disctince si importante in functionarea motorului:</br>
+		<span class="blue" style="line-height: 30px;">* piesele sistemului biela-manivela;</span></br>
+		<span class="blue" style="line-height: 30px;">* piesele sistemului de distributie;</span></br>
+		&nbsp&nbsp&nbsp<span class="blue">Sistemul biela manivela</span> serveste la transmiterea fortelor create in cilindrii motorului la arborele cotit, iar mecanismul de distributie
+		asigura introducerea amestecului carburant in cilindrii si evacuarea gazelor arse. Capul bielei este partea care asigura imbinarea cu fusul maneton al arborelui cotit.</br>
+		Sistemul biela-manivela transforma miscarea liniara de tip "du-te-vino" a pistonului in miscare de rotatie continua a arborelui cotit.
+		</div>
+		<div class="second">
+			<img src="images/biela.jpg" style="height: 530px; margin-left: 115px;" alt=""/>
+		</div>
+	</li>
+	<li>
+		<h2>Arborele cotit</h2>
+		<div class="boxspc first">&nbsp&nbsp&nbsp<span class="blue">
+			Arborele cotit </span> transforma miscarea pendulara a bielei in miscare de rotatie pe care o cedeaza apoi transmisiei si rotilor si rotilor motoare ale autovehiculelor.
+			El antreneaza totodata in miscare si alte sisteme auxiliare ale motorului.
+		</div>
+		<div class="boxspc second">
+			<img src="images/arborecotit.jpg" style="margin-top: 30px; height: 400px; margin-left: 125px; margin-bottom: -65px;" alt=""/>
+		</div>
+	</li>
+	<li>
+		<h2>Arborele cu came</h2>
+		<div class="boxspc first">&nbsp&nbsp&nbspSupapele sunt actionate de <span class="blue">
+			arborele cu came</span>, care este pozitionat in chiulasa si este actionat de miscarea arborelui cotit. Relatia dintre miscarea axului cu came si
+			miscarea arborelui cotit este asigurata printr-un mecanism complex de transmisie numit <span class="blue">sistem de distributie.</span>
+		</div>
+		<div class="boxspc second">
+			<img src="images/arborecame.jpg" style="margin-top: 40px; height: 200px; margin-left: 110px;" alt=""/>
+		</div>
+	</li>
+</ul>
+<script>
+	$(function(){
+		$('#slider').anythingSlider({
+			resizeContents      : false,
+			navigationSize      : false,     // Set this to the maximum number of visible navigation tabs; false to disable
+			onSlideComplete: function(slider) {
+				// keep the current navigation tab in view
+				slider.navWindow( slider.currentPage );
+			}
+		});
+		$('.lbpz').colorbox();
+	});
+</script>

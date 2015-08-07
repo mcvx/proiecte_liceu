@@ -1,0 +1,209 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Programare dinamica - Problema 1</title>
+	
+	<script type="text/javascript" src="js/	jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/highlight.pack.js"></script>
+	<script type="text/javascript" src="js/loadCpp.js"></script>
+	<script>
+		$(document).ready(function() {
+			loadCpp("cpp/p1.cpp", "#sursa1");
+		});
+	</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/github.css" rel="stylesheet" type="text/css"/>
+	
+</head>
+
+<body class="impress-not-supported">
+
+	<div id="nav">
+		<ul>
+			<li><a href="introducere.html"><span class="icon info"></span>Introducere</a></li>
+			<li><a href="problema1.html"><span class="icon html"></span>Problema 1</a></li>
+			<li><a href="problema2.html"><span class="icon html"></span>Problema 2</a></li>
+			<li><a href="problema3.html"><span class="icon html"></span>Problema 3</a></li>
+			<li><a href="problema4.html"><span class="icon html"></span>Problema 4</a></li>
+			<li><a href="bibliografie.html"><span class="icon catalogue"></span>Bibliografie</a></li>
+		</ul>
+	</div>
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+	
+	<div id="impress">
+		
+		<div class="step" data-x="0" data-y="0" data-z="150" data-rotate="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+			<h1 class="title">Parantezare optima<br/>de matrice</h1>
+		</div>
+		
+		<div class="step" data-x="-200" data-y="-440" data-z="1" data-rotate="90" data-rotate-x="60" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Enunţ</h3>
+			<span class="text2">
+				Se dă un produs matriceal <hgl>M = M<sub>1</sub>M<sub>2</sub>...M<sub>n</sub></hgl>. Cum înmulţirea matricelor este asociativă, toate parantezările conduc la acelaşi rezultat. Însă, numărul total de înmulţiri scalare ale produsului matriceal poate să difere substanţial în funcţie de ordinea efectuării calculelor, ordine dată de paranteze. Dimensiunile celor <hgl>n</hgl> matrice se dau sub forma unui şir <hgl>d</hgl> astfel încât perechea <hgl>(d<sub>i-1</sub>, d<sub>i</sub>)</hgl> reprezintă dimensiunile matricei <hgl>M<sub>i</sub></hgl>.
+			</span>
+			<h3 class="title">Cerinţă</h3>
+			<span class="text2">
+				Se cere să se minimizeze numărul total de înmulţiri scalare ale produsului matriceal <hgl>M</hgl>, valoare ce corespunde unei parantezări optime.
+			</span>
+		</div>
+		
+		<div class="step" data-x="1100" data-y="120" data-z="1" data-rotate="-48" data-rotate-x="-30" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Date de intrare</h3>
+			<span class="text2">
+				Fişierul de intrare <hgl>podm.in</hgl> conţine pe prima linie un număr natural <hgl>n</hgl>, reprezentând numărul matricelor. Pe următoarea linie se găsesc <hgl>n + 1</hgl> numere naturale, reprezentând valorile şirului <hgl>d</hgl>.
+			</span>
+			<h3 class="title">Date de ieşire</h3>
+			<span class="text2">
+				În fişierul de ieşire <hgl>podm.out</hgl> se va găsi un singur număr natural egal cu valoarea minimă a numărului total de înmulţiri scalare ale produsului matriceal <hgl>M</hgl>.
+			</span>
+			<h3 class="title">Exemplu</h3>
+			<span class="text2">
+				<table id="exemplu1">
+					<tr>
+						<th>podm.in</th><th>podm.out</th>
+					</tr>
+					<tr>
+						<td>4<br/>13 5 89 3 34</td><td>2856</td>
+					</tr>
+				</table>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-200" data-y="840" data-z="1" data-rotate="-32" data-rotate-x="0" data-rotate-y="30" data-scale="0.5">
+			<h2 class="title">Explicaţie</h2>
+			<span class="text">
+				În exemplu se dau 4 matrici: <hgl>A</hgl> de dimensiuni <hgl2>(13, 5)</hgl2>, <hgl>B</hgl> de <hgl2>(5, 89)</hgl2>, <hgl>C</hgl> de <hgl2>(89, 3)</hgl2>, <hgl>D</hgl> de <hgl2>(3, 34)</hgl2>. În funcţie de ordinea efectuării înmulţirilor matriceale, numărul total de înmulţiri scalare poate să fie foarte diferit:
+				<ul class="lista">
+					<li><hgl>(((AB)C)D)</hgl> : <hgl2>10582</hgl2> înmulţiri</li>
+					<li><hgl>((AB)(CD))</hgl> : <hgl2>54201</hgl2> înmulţiri</li>
+					<li><hgl>((A(BC))D)</hgl> : <hgl2>2856</hgl2> înmulţiri</li>
+					<li><hgl>(A((BC)D))</hgl> : <hgl2>4055</hgl2> înmulţiri</li>
+				</ul>
+				Rezultatul optim se obţine pentru cea de-a treia parantezare: <hgl>((A(BC))D)</hgl>.
+			</span>
+		</div>
+		
+		<div class="step" data-x="600" data-y="440" data-z="1" data-rotate="90" data-rotate-x="10" data-rotate-y="60" data-scale="0.5">
+			<span class="text2">
+				Este interesant să observăm că nu este indiferent modul de înmulţire a <hgl>n</hgl> matrice.<br/>
+				Să considerăm că avem de înmulţit patru matrice : <hgl>A(10,1)</hgl>, <hgl2>B(1,10)</hgl2>, <hgl>C(10,1)</hgl>, <hgl2>D(1,10)</hgl2>.
+				Să efectuăm produsul în ordinea <hgl>AxBxCxD</hgl>.
+				<ul class="lista">
+					<li><hgl>A x B = A’</hgl> (10 linii, 10 coloane) -> se efectuează <hgl2>100 de înmulţiri</hgl2>;</li>
+					<li><hgl>A’ x C = C’</hgl> (10 linii, o coloană) -> se efectuează <hgl2>100 de înmulţiri</hgl2>;</li>
+					<li><hgl>C’ x D = M</hgl> (10 linii, 10 coloane) -> se efectuează <hgl2>100 de înmulţiri</hgl2>;</li>
+				</ul>
+				Dacă acest produs se efectuează în ordine naturală, au loc <hgl>300 de înmulţiri</hgl>.
+			</span>
+		</div>
+		
+		<div class="step" data-x="500" data-y="340" data-z="1" data-rotate="-32" data-rotate-x="-40" data-rotate-y="20" data-scale="0.5">
+			<span class="text2">
+				Să efectuăm acelaşi produs în ordinea în care rezultă din expresia: <hgl>A x ((B x C) x D)</hgl>.
+				<ul class="lista">
+					<li><hgl>B x C = C’</hgl> (o linie, o coloană) -> se efectuează <hgl2>10 înmulţiri</hgl2>;</li>
+					<li><hgl>C’ x D = D’</hgl> (o linie, 10 coloane) ->  se efectuează <hgl2>10 înmulţiri</hgl2>;</li>
+					<li><hgl>A x D’ = M</hgl> (10 linii, 10 coloane) -> se efectuează <hgl2>100 de înmulţiri</hgl2>;</li>
+				</ul>
+				Rezultatul se poate calcula efectuând doar <hgl>120 de înmulţiri</hgl>.<br/><br/>
+			</span>
+		</div>
+		
+		<div class="step" data-x="500" data-y="840" data-z="1" data-rotate="32" data-rotate-x="0" data-rotate-y="0" data-scale="0.5">
+			<span class="text">
+				În concluzie, apare o problemă foarte interesantă, şi anume de a afla modul în care trebuie să se înmulţească cele <hgl>n</hgl> matrice astfel încât numărul de înmulţiri să fie minim.
+			</span>
+		</div>	
+
+		<div class="step" data-x="900" data-y="-440" data-z="1" data-rotate="64" data-rotate-x="0" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title" style="text-align: center;">Metode de rezolvare</h2>
+		</div>
+		
+		<div class="step" data-x="-400" data-y="-540" data-z="1" data-rotate="0" data-rotate-x="150" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title">I. Metoda naivă</h2>
+			<span class="text">
+				Se generează toate modurile de a paranteza expresia şi se calculează de fiecare dată numărul de înmulţiri scalare efectuate. Însă numărul de moduri de a scrie un şir cu <hgl>n</hgl> paranteze deschise şi <hgl>n</hgl> paranteze inchise este <hgl>C(n) = <sup>C<sup>n</sup><sub style="margin-left: -14px;">2n</sub></sup>&frasl;<sub>n+1</sub></hgl>, şirul <hgl>C(n)<sub>(n≥1)</sub></hgl> se numeşte şirul numerelor lui Catalan. Pentru numere mai mari decat <hgl>10</hgl>, algoritmul este foarte încet, deoarece şirul numerelor lui Catalan creşte exponenţial, de exemplu <hgl>C(11) = 58786</hgl>.
+			</span>
+		</div>
+		
+		<div class="step" data-x="-540" data-y="340" data-z="1" data-rotate="0" data-rotate-x="-20" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title">II. Metoda programării dinamice</h2>
+			<span class="text">
+				Din fericire, pentru aceasta problemă există o rezolvare polinomială prin utilizarea metodei programării dinamice. Să presupunem că produsul <hgl>A<sub>i</sub>xA<sub>(i+1)</sub>x ... A<sub>j</sub>x</hgl> s-a calculat optim. În final s-au înmulţit două matrice de <hgl>(A<sub>i</sub>x ... A<sub>k</sub>x)x(A<sub>(k+1)</sub>x ... A<sub>j</sub>x)</hgl>. Atunci produsele <hgl>A<sub>i</sub>x ... A<sub>k</sub>x</hgl> si <hgl>A<sub>(k+1)</sub>x ... A<sub>j</sub>x</hgl> au fost calculate optim, conform principiului programării dinamice.
+			</span>
+		</div>
+		
+		<div class="step" data-x="-740" data-y="0" data-z="1" data-rotate="45" data-rotate-x="0" data-rotate-y="35" data-scale="0.5">
+			<h2 class="title">Determinarea relaţiei de recurenţă</h2>
+			<span class="text">
+				Conform principiului programării dinamice pentru ca numărul <hgl>d[i][j]</hgl> sa fie minim este necesar ca <hgl>d[i][k]</hgl> şi <hgl>d[k+1][j]</hgl> să fie minime, <hgl>∀ i ≤ k &lt; j</hgl>.<br/>
+				Deducem următoarele relaţii de recurenţă :
+				<ul class="lista">
+					<li><hgl>d[i][j] = 0</hgl> pentru <hgl>i = j</hgl>;</li>
+					<li><hgl>d[i][j] = a[ i ] * a[ j ] * a[ j+1 ]</hgl> pentru <hgl>i + 1 = j</hgl>;</li>
+					<li><hgl>d[i][j] = min<sub>(i ≤ k &lt; j)</sub>{d[i][k] + d[k+1][j] + a[i] * a[k+1] * a[j+1]}</hgl></li>
+				</ul>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-340" data-y="-220" data-z="1" data-rotate="-45" data-rotate-x="0" data-rotate-y="-35" data-scale="0.5">
+			<h3 class="title">Rezolvarea relaţiei de recurenţă</h3>
+			<span class="text2">
+				Rezolvarea recursivă a relaţiei de recurenţă de mai sus este ineficientă deoarece subproblemele se suprapun (o abordare recursivă ar conduce la rezolvarea aceleiaşi probleme de mai multe ori). Prin urmare, vom rezolva relaţia de recurenţă în mod <hgl>bottom – up</hgl>: determinăm soluţia pentru expresii formate din <hgl>3 matrici</hgl>, apoi <hgl>4 matrici</hgl>, . . ., <hgl>n matrici</hgl>. Astfel matricea <hgl>d</hgl> se va completa pe diagonale paralele cu diagonala principală.
+			</span>
+		</div>
+		
+		<div class="step" data-x="-340" data-y="-220" data-z="1" data-rotate="-45" data-rotate-x="0" data-rotate-y="-35" data-scale="0.5">
+			<h3 class="title">Pentru matricele  <hgl>(30, 35)</hgl> <hgl>(35,15)</hgl> <hgl>(15,5)</hgl> <hgl>(5,10)</hgl> <hgl>(10, 20)</hgl> <hgl>(20, 25)</hgl> se obţin :</h3>
+			<img src="images/img1.bmp" alt="" style="display: block; margin: 20px auto;"/>
+			<span class="text2" style="text-indent: 0;">
+				Matricea din stânga este matricea <hgl>d</hgl>, iar matricea din dreapta este folosită pentru refacerea soluţiei.
+			</span>
+		</div>
+		
+		<div class="step" data-x="300" data-y="240" data-z="1" data-rotate="0" data-rotate-x="45" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title">Complexitatea algoritmului</h2>
+			<span class="text">
+				Operaţia fundamentală este comparaţia. Observăm că se execută maxim <hgl>(n-3)*n*n</hgl> operaţii, astfel complexitatea de timp este <hgl>O(n<sup>3</sup>)</hgl>. Din punct de vedere al memoriei folosim un tablou bidimensional de elemente de tip long long(deoarece numărul de înmulţiri scalare poate depăşi <hgl>2<sup>31</sup></hgl>) şi un tablou unidimensional cu <hgl>n</hgl> elemente de tipul <hgl>int</hgl>, aşadar complexitatea de memorie este <hgl>O(n<sup>2</sup>)</hgl>. Menţionăm că memoria se poate reduce la <hgl>O(n)</hgl>, deoarece la fiecare pas avem nevoie doar de ultima diagonală, dar aceasta nu face scopul lucrării prezentate.
+			</span>
+		</div>
+			
+		<div class="step" data-x="300" data-y="-440" data-z="1" data-rotate="30" data-rotate-x="-30" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title"><a href="sursa1.html" target="_blank">&raquo; Sursă C++ &laquo;</a></h2>
+			<div id="sursa1" class="syntax">
+			</div>
+		</div>
+		
+		<div id="overview" class="step step-overview" data-x="0" data-y="0" data-scale="2">
+		</div>
+
+	</div>
+	
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+	<script src="js/impress.js"></script>
+	<script>impress().init();</script>
+
+</body>
+
+</html>

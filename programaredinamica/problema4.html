@@ -1,0 +1,183 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Programare dinamica - Problema 4</title>
+	
+	<script type="text/javascript" src="js/	jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/highlight.pack.js"></script>
+	<script type="text/javascript" src="js/loadCpp.js"></script>
+	<script>
+		$(document).ready(function() {
+			loadCpp("cpp/p4.cpp", "#sursa4");
+		});
+	</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/github.css" rel="stylesheet" type="text/css"/>
+	
+</head>
+
+<body class="impress-not-supported">
+
+	<div id="nav">
+		<ul>
+			<li><a href="introducere.html"><span class="icon info"></span>Introducere</a></li>
+			<li><a href="problema1.html"><span class="icon html"></span>Problema 1</a></li>
+			<li><a href="problema2.html"><span class="icon html"></span>Problema 2</a></li>
+			<li><a href="problema3.html"><span class="icon html"></span>Problema 3</a></li>
+			<li><a href="problema4.html"><span class="icon html"></span>Problema 4</a></li>
+			<li><a href="bibliografie.html"><span class="icon catalogue"></span>Bibliografie</a></li>
+		</ul>
+	</div>
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+	
+	<div id="impress">
+		
+		<div class="step" data-x="0" data-y="0" data-z="150" data-rotate="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+			<h1 class="title">Culori</h1>
+		</div>
+		
+		<div class="step" data-x="-200" data-y="-240" data-z="1" data-rotate="-15" data-rotate-x="40" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Enunţ</h3>
+			<span class="text">
+				Pasiunea Mirunei este să coloreze. Vacanţa trecută şi-a petrecut-o la bunica ei la ţară şi pentru că se cam plictisea, s-a gândit să vopsească gardul de la casa bunicii.
+			</span>
+		</div>
+		
+		<div class="step" data-x="100" data-y="320" data-z="1" data-rotate="38" data-rotate-x="-30" data-rotate-y="0" data-scale="0.5">
+			<span class="text">
+				Gardul este compus din <hgl>N</hgl> scânduri dispuse una lângă alta. Miruna a găsit în garajul bunicii 5 cutii de vopsea de culori diferite: <hgl>albă</hgl>, <hgl>albastră</hgl>, <hgl>roşie</hgl>, <hgl>verde</hgl> şi <hgl>galbenă</hgl>. Când a vopsit gardul, Miruna a respectat următoarele reguli:
+			</span>
+		</div>
+		
+		<div class="step" data-x="-400" data-y="120" data-z="1" data-rotate="-48" data-rotate-x="-30" data-rotate-y="0" data-scale="0.5">
+			<span class="text2">
+				<ul class="lista">
+					<li>Dacă o scândură era vopsită cu <hgl>alb</hgl>, următoarea scândură o vopsea obligatoriu cu <hgl>albastru</hgl></li>
+					<li>Dacă o scândură era vopsită cu <hgl>albastru</hgl>, atunci următoarea scândură o vopsea cu <hgl>alb</hgl> sau <hgl>roşu</hgl></li>
+					<li>Dacă o scândură era vopsită cu <hgl>roşu</hgl>, atunci următoarea scândură o vopsea cu <hgl>albastru</hgl> sau <hgl>verde</hgl></li>
+					<li>Dacă o scândură era vopsită cu <hgl>verde</hgl>, atunci următoarea scândură o vopsea cu <hgl>roşu</hgl> sau <hgl>galben</hgl></li>
+					<li>Dacă o scândură era vopsită cu <hgl>galben</hgl>, atunci următoarea scândură o vopsea obligatoriu cu <hgl>verde</hgl></li>
+				</ul>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-500" data-y="-240" data-z="1" data-rotate="-90" data-rotate-x="0" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title" style="text-align: center; font-size: 36px;">
+				După ce şi-a terminat treaba, Miruna îşi admira “opera de artă” şi se întreba în câte moduri diferite ar fi putut să vopsească gardul bunicii.
+			</h3>
+		</div>
+		
+		<div class="step" data-x="400" data-y="120" data-z="1" data-rotate="48" data-rotate-x="-30" data-rotate-y="20" data-scale="0.5">
+			<h3 class="title">Date de intrare</h3>
+			<span class="text2">
+				Fişierul de intrare <hgl>culori3.in</hgl> conţine pe prima sa linie un singur număr natural <hgl>N</hgl>.
+			</span>
+			<h3 class="title">Date de ieşire</h3>
+			<span class="text2">
+				În fişierul de ieşire <hgl>out.txt</hgl> se va afla un singur număr întreg reprezentând distanţa de editare a celor doua şiruri.
+			</span>
+		</div>
+		
+		<div class="step" data-x="300" data-y="-340" data-z="1" data-rotate="0" data-rotate-x="45" data-rotate-y="45" data-scale="0.5">
+			<h3 class="title">Exemplu</h3>
+			<span class="text2">
+				<table id="exemplu2">
+					<tr>
+						<th>in.txt</th>
+						<th>out.txt</th>
+						<th>Explicatie</th>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>24</td>
+						<td style="text-align: left;">
+							Gardul poate fi vopsit astfel:
+							<span style="font-size: 20px;">(alb,albastru,alb,albastru); (alb,albastru,rosu,albastru);
+							(alb,albastru,rosu,verde); (albastru,alb,albastru,alb);
+							(albastru,alb,albastru,rosu); (albastru,rosu,albastru,alb);
+							(albastru,rosu,albastru,rosu); (albastru,rosu,verde,rosu);
+							(albastru,rosu,verde,galben); (rosu,albastru,alb,albastru);
+							(rosu,albastru,rosu,albastru); (rosu,albastru,rosu,verde);
+							(rosu,verde,rosu,albastru); (rosu,verde,rosu,verde);
+							(rosu,verde,galben,verde); (verde,rosu,albastru,alb);
+							(verde,rosu,albastru,rosu); (verde,rosu,verde,rosu);
+							(verde,rosu,verde,galben); (verde,galben,verde,rosu);
+							(verde,galben,verde,galben); (galben,verde,rosu,albastru);
+							(galben,verde,rosu,verde); (galben,verde,galben,verde);</span>
+						</td>
+					</tr>
+				</table>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-400" data-y="-540" data-z="1" data-rotate="0" data-rotate-x="150" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Descrierea soluţiei</h3>
+			<span class="text">
+				Dinamica ce rezolvă problema pleacă de la următoarea observaţie: numărul de moduri în care putem colora un gard de lungime <hgl>n</hgl> cu condiţia ca ultima scândură din gard să aibă <hgl>culoarea x</hgl> este numeric egal cu numărul de moduri de a colora un gard de lungime <hgl>n-1</hgl> având ultima scândura de o culoare care poate sta langă <hgl>culoarea x</hgl>.
+			</span>
+		</div>
+		
+		<div class="step" data-x="-740" data-y="0" data-z="1" data-rotate="45" data-rotate-x="0" data-rotate-y="35" data-scale="0.5">
+			<span class="text">
+				Astfel, generalizând, numărul total de moduri în care putem colora un gard cu <hgl>n</hgl> scânduri este suma modurilor în care putem colora un gard de <hgl>n-1</hgl> scânduri având ultima scândura fiecare dintre culori.
+			</span>
+		</div>
+		
+		<div class="step" data-x="140" data-y="-250" data-z="1" data-rotate="60" data-rotate-x="0" data-rotate-y="35" data-scale="0.5">
+			<span class="text">
+				Aşadar, dinamica noastră este un tablou cu <hgl>5 linii</hgl>, fiecare linie avănd următoarea semnificaţie: <br/>
+					<span style="display: block; text-align: center; padding: 30px; font-weight: bold;"><hgl2>d[i][j]</hgl2> = numarul de moduri în care putem colora un gard de lungime <hgl>j</hgl>, având ultima scândură de culoarea <hgl>i</hgl></span>
+			</span>
+		</div>
+		
+		<div class="step" data-x="-340" data-y="400" data-z="1" data-rotate="0" data-rotate-x="0" data-rotate-y="35" data-scale="0.5">
+			<span class="text2">
+				Recurenţa după care ne formăm această dinamică pleacă exact de la observaţia descrisă iniţial.<br/>
+				Astfel, <hgl>d[i][j]</hgl> = 
+					<ul class="lista">
+						<li><hgl>d[2][j-1]</hgl>, dacă <hgl2>i = 1</hgl2></li>
+						<li><hgl>d[i-1][j-1]+d[i+1][j-1]</hgl>, dacă <hgl2>i = 2, 3, sau 4</hgl2></li>
+						<li><hgl>d[4][j-1]</hgl>, dacă <hgl2>i = 5</hgl2></li>
+					</ul>
+			</span>
+		</div>
+		
+		<div class="step" data-x="100" data-y="-240" data-z="1" data-rotate="0" data-rotate-x="90" data-rotate-y="0" data-scale="0.5">
+			<h2 class="title"><a href="sursa4.html" target="_blank">&raquo; Sursă C++ &laquo;</a></h2>
+			<div id="sursa4" class="syntax">
+			</div>
+		</div>
+		
+		<div id="overview" class="step step-overview" data-x="0" data-y="0" data-scale="2">
+		</div>
+
+	</div>
+	
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+	<script src="js/impress.js"></script>
+	<script>impress().init();</script>
+
+</body>
+
+</html>

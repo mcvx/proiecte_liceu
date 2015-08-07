@@ -1,0 +1,8 @@
+int n, A[20][20];   // cunoscute
+
+// algoritmul Roy-Warshal
+for (int i, j, k = 1; k <= n; k++)
+	for (i = 1; i <= n; i++)
+		for(j = 1; j <= n; j++)
+			if (a[i][j] == 0)
+			    a[i][j] = a[i][k] * a[k][j];

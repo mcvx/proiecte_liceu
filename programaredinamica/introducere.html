@@ -1,0 +1,96 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Programare dinamica - Introducere</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" />
+	
+</head>
+
+<body class="impress-not-supported">
+
+	<div id="nav">
+		<ul>
+			<li><a href="introducere.html"><span class="icon info"></span>Introducere</a></li>
+			<li><a href="problema1.html"><span class="icon html"></span>Problema 1</a></li>
+			<li><a href="problema2.html"><span class="icon html"></span>Problema 2</a></li>
+			<li><a href="problema3.html"><span class="icon html"></span>Problema 3</a></li>
+			<li><a href="problema4.html"><span class="icon html"></span>Problema 4</a></li>
+			<li><a href="bibliografie.html"><span class="icon catalogue"></span>Bibliografie</a></li>
+		</ul>
+	</div>
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+	
+	<div id="impress">
+		
+		<div class="step" data-x="0" data-y="0" data-z="150" data-rotate="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+			<h1 class="title">Prezentarea metodei<br/>programarii dinamice</h1>
+		</div>
+		
+		<div class="step" data-x="-700" data-y="0" data-z="1" data-rotate="-70" data-rotate-x="40" data-rotate-y="-20" data-scale="0.5">
+			<span class="text">
+				<hgl>Programarea dinamică</hgl> este o metodă de elaborare a algoritmilor ce se aplică în general problemelor pentru care se cere determinarea unui optim în urma adoptării unor decizii.
+			</span>
+			<span class="text">
+				Nu există un criteriu pe baza căruia să identificăm o problemă pentru rezolvarea căreia trebuie să utilizăm metoda programării dinamice, dar putem formula două proprietăţi care sugerează o soluţie prin programare dinamică.
+			</span>
+		</div>
+		
+		<div class="step" data-x="-300" data-y="-400" data-z="1" data-rotate="45" data-rotate-x="30" data-rotate-y="0" data-scale="0.5">
+			<h3 class="title">Substructură optimală</h3>
+			<span class="text2">
+				Problema dată poate fi descompusă în subprobleme şi soluţia optimă a problemei depinde de soluţiile optime ale subproblemelor sale. Acest criteriu nu indică neapărat o soluţie prin programare dinamică, ar putea fi şi un indiciu ca se poate aplica metoda <hgl>„Greedy”</hgl> sau metoda <hgl>„Divide et impera”</hgl>.
+			</span>
+		</div>
+		
+		<div class="step" data-x="0" data-y="400" data-z="1" data-rotate="-40" data-rotate-x="0" data-rotate-y="60" data-scale="0.5">
+			<h3 class="title">Subprobleme superpozabile</h3>
+			<span class="text2">
+				Subproblemele problemei date nu sunt independente, ci se suprapun. Deoarece subproblemele problemei date se suprapun, deducem că o abordare prin metoda <hgl>„Divide et impera”</hgl> ar fi dezastruoasă din punct de vedere al timpului de execuţie (din cauza faptului că problemele se suprapun se ajunge la rezolvarea repetată a aceleiaşi subprobleme). Prin urmare, vom rezolva subproblemele o singură dată, reţinând rezultatele într-o structură de date suplimentară (de obicei un tablou).			
+			</span>
+		</div>
+		
+		<div class="step" data-x="700" data-y="-200" data-z="1" data-rotate="25" data-rotate-x="0" data-rotate-y="25" data-scale="0.5">
+			<h3 class="title">Rezolvarea unei probleme prin programare dinamică presupune următorii paşi:</h3>
+			<span class="text2">
+				<ul class="lista">
+					<li>Se identifică subproblemele problemei date</li>
+					<li>Se alege o structură de date capabilă să reţină soluţiile subproblemelor</li>
+					<li>Se caracterizează substructura optimală a problemei printr-o relaţie de recurenţă</li>
+					<li>Pentru a determina soluţia optimă, se rezolvă relaţia de recurenţă în mod <hgl>bottom-up</hgl> (se rezolvă subproblemele în ordinea crescătoare a dimensiunii lor)</li>
+				</ul>
+			</span>
+		</div>
+		
+		<div id="overview" class="step step-overview" data-x="0" data-y="0" data-scale="2">
+		</div>
+
+	</div>
+	
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+	<script src="js/impress.js"></script>
+	<script>impress().init();</script>
+
+</body>
+
+</html>

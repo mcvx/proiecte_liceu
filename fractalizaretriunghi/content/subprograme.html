@@ -1,0 +1,164 @@
+<h2 class="text" style="margin-top: 20px;">Fulgul lui Koch</h2>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”punct punct_treime(punct A, punct B)”</span> este subprogramul folosit la determinarea coordonatelor punctului situat pe segmentul AB la o treime de A folosind formula :
+</p>
+
+<p class="text" style="color: #B22222; text-indent: 0; padding-left: 40px;">
+	C.x = A.x + (B.x - A.x)/3;<br/>
+	C.y = A.y + (B.y - A.y)/3;
+</p>
+
+<p class="text" style="color: #B22222;">
+	Subprogramul returnează prin nume coordonatele acestui punct (într-o variabilă de tip ”punct” - structură de date ce conține două câmpuri de tip double) și pentru un segment AE este apelat de două ori: ”punct_treime(A,E)” și ”punct_treime(E,A)” pentru a determina cele două puncte ce împart segmentul AE în 3.
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+punct punct_treime(punct A, punct B){
+	punct C;
+	C.x = A.x + (B.x - A.x)/3;
+	C.y = A.y + (B.y - A.y)/3;
+	return C;
+}
+</pre></div>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”punct punct_mij(punct A, punct B)”</span> este funcția folosită la determinarea coordonatelor punctului care împreună cu A și B formează un triunghi echilateral și folosește formula:
+</p>
+
+<p class="text" style="color: #B22222; text-indent: 0; padding-left: 40px;">
+	E.x = A.x + (cos(M_PI/3) * (B.x - A.x) - sin(M_PI/3) * (B.y - A.y));<br/>
+	E.y = A.y + (sin(M_PI/3) * (B.x - A.x) + cos(M_PI/3) * (B.y - A.y));
+
+</p>
+
+<p class="text" style="color: #B22222;">
+	Coordonatele acestui punct sunt returnate prin nume (într-o variabilă de tip ”punct”) la subprogramul care a apelat funcția.
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+punct punct_mij(punct A, punct B){
+	punct E;
+	E.x = A.x + (cos(M_PI/3) * (B.x - A.x) - sin(M_PI/3) * (B.y - A.y));
+	E.y = A.y + (sin(M_PI/3) * (B.x - A.x) + cos(M_PI/3) * (B.y - A.y));
+	return E;
+}
+</pre></div>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”void koch_line(punct A, punct E, int n)”</span> este funcția principală în cadrul rezolvării problemei. Aceasta funcționează recursiv, determinând în variabile locale coordonatele punctelor care împart segmenul AE în 3 părți egale apelând funcția ”punct_treime” și coordonatele punctului care, îmreună cu cele două determinate anterior, formează un triunghi echilateral. Parametrul de tip int, n, este folosit pentru a reține numărul iterației curente, astfel, dacă acesta este mai mic deât numărul dorit de iterații, funcția se va auto apela pentru segmentele nou determinate: cele două segmente marginale (după împărțirea în 3 și cele două laturi ale triunghiului echilateral format care conțin punctul exterior dreptei pe care se află segmentul inițial. Fie după determinarea punctelor, fie la ieșirea din recursivitate, în interiorul acestei funcții se va mai apela un subprogram folosit pentru a desena pe ecran.
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+void koch_line(punct A, punct E, int n=1){
+	punct B, C, D;
+	B = punct_treime(A, E);
+	D = punct_treime(E, A);
+	C = punct_mij(B, D);
+	if (n<iteratii) {
+		koch_line(A, B, n+1);
+		koch_line(B, C, n+1);
+		koch_line(C, D, n+1);
+		koch_line(D, E, n+1);
+	}
+	else draw(A, B, C, D, E);
+}
+</pre></div>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”void koch_snowflake(punct A, punct B, punct C)”</span> este apelat o singură dată pe valorile coordonatelor triunghiului iniţial. Singurul scop al acestei funcții este să inițieze subprogramul recursiv ”koch_line” pentru fiecare latură a triunghiului.
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+void koch_snowflake(punct A, punct B, punct C){
+	koch_line(A, B);
+	koch_line(B, C);
+	koch_line(C, A);
+	if (mode) {
+		setfillstyle(CLOSE_DOT_FILL, WHITE);		//Culoarea fulgului
+		floodfill(getmaxx()/2, getmaxy()/2, WHITE);	//Umple fulgul
+	}
+}
+</pre></div>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”void draw(punct A, punct B, punct C, punct D, punct E)”</span> este un subprogram care nu face altceva decât să deseneze. Acesta fie unește cele 5 puncte primite ca parametru, fie desenează triunghiul BCD și segmentele AB și DE (versiunea în interfața de programare OpenGL).
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+void draw(punct A, punct B, punct C, punct D, punct E){
+	moveto(A.x, A.y);
+	lineto(B.x, B.y); delay(dly);
+	lineto(C.x, C.y); delay(dly);
+	lineto(D.x, D.y); delay(dly);
+	lineto(E.x, E.y);
+}
+</pre></div>
+
+<h2 class="text" style="margin-top: 15px;">Triunghiul lui Sierpinski</h2>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”punct punct_mij(punct A, punct B)”</span> primește prin parametri coordonatele a 2 puncte (capetele unui segment) și returnează prin nume coordonatele punctului din mijlocul
+lui, aceasta folosind formula:
+</p>
+
+<p class="text" style="color: #B22222; text-indent: 0; padding-left: 40px;">
+	E.x = (A.x + B.x)/2;<br/>
+	E.y = (A.y + B.y)/2;
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+punct punct_mij(punct A, punct B){
+	punct E;
+	E.x = (A.x + B.x)/2;
+	E.y = (A.y + B.y)/2;
+	return E;
+}
+</pre></div>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”void sierpinski(triunghi t, int n)”</span> este funcția principală pentru a rezolva această problemă. La prima apelare, aceasta primește prin intermediul parametrului t de tip ”triunghi” (structură de date ce conține 3 câmpuri de tip ”punct”) coordonatele triunghiului inițial. Subprogramul determină în variabile locale coordonatele mijlocului fiecărei laturi în variabile de tip ”punct” si calculează coordonatele a 3 triunghiuri (cele ce ar rămâne prin îndepărtarea triunghiului format de cele 3 mijoace) în 3 varibile locale de tip triunghi. Dacă parametrul n, care reține numărul iterației curente, are o valoare mai mică decât numărul de iterații dorit, funcția se va apela de 3 ori (o dată pentru coordonatele fiecăruia dintre cele 3 triunghiuri determinate) incrementând variabila n. Fie la ieișirea din recursivitate, fie la începutul subrogramuluii, trebuie apelată, ca și în cazul aplicației precedente, o funcție care să deseneze pe ecran.
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+void sierpinski(triunghi t, int n) {
+	punct D, E, F;
+	triunghi u, v, w;
+	D = punct_mij(t.A,t.B);
+	E = punct_mij(t.B,t.C);
+	F = punct_mij(t.A,t.C);
+	u.A = D; u.B = E; u.C = t.B;
+	v.A = D; v.B = F; v.C = t.A;
+	w.A = E; w.B = F; w.C = t.C;
+	if(iteratii>n) {
+		sierpinski(u,n+1);
+		sierpinski(v,n+1);
+		sierpinski(w,n+1);
+	}
+	else draw(t);
+}
+</pre></div>
+
+<p class="text" style="color: #B22222;">
+	<span style="color: #222; font-weight: bold;">”void draw(triunghi t)”</span> este, după cum se observă, diferit de subprogramul ”draw” al problemei precedente, acesta desenând un sigur triunghi (sau doar conturul său), mai exact triunghiul determinat de coordonatele primite prin parametrul t.
+</p>
+
+<div class="cod"><pre name="code" class="cpp">
+void draw(triunghi t){
+	if (!mode){
+		moveto(t.B.x, t.B.y);
+		lineto(t.C.x, t.C.y);
+		lineto(t.A.x, t.A.y);
+		lineto(t.B.x, t.B.y);
+	}
+	else {
+		int puncte[] = {t.A.x, t.A.y, t.B.x, t.B.y, t.C.x, t.C.y, t.A.x, t.A.y};
+		fillpoly(4, puncte);
+	}
+}
+</pre></div>
+
+<script type="text/javascript">
+	dp.SyntaxHighlighter.ClipboardSwf = '../highlighter/clipboard.swf';
+	dp.SyntaxHighlighter.HighlightAll('code');
+</script>

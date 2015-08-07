@@ -1,0 +1,14 @@
+<h2 class="text" style="margin-top: 20px;">Fulgul lui Koch</h2>
+<p class="text" style="color: #D2691E;">
+	Din punct de vedere al timpului de execuţie, algoritmul pentru generarea fractalului ”fulgul lui Koch” execută de 3 ori funcţia recursivă „koch_line” care, pentru fiecare iteraţie, se mai apeleza de incă 4 ori, rezultând astfel 3*4<sup>n</sup>, adică un ordin de complexitate exponenţial, cu exponentul „n” => O(4<sup>n</sup>).
+</p>
+<p class="text" style="color: #D2691E;">
+	Din punct de vedere al memoriei necesare, pentru fiecare apel al funcţiei „koch_line” sunt alocate 2 variabile de tip punct şi una de tip int ca parametri şi 3 variabile locale de tip punct, rezultând astfel 5 variabile de tip punct, adică 10 vaiabile de tip double si 1 variabilă de tip int. Aşadar, pentru rularea funcţiei „koch_line” este necesar un spaţiu de 4+10*8 adică 84 de octeţi la fiecare iteraţie, rezultând un consum total de memorie de (3*4<sup>n</sup>)*84 octeţi.
+</p>
+<h2 class="text">Triunghiul lui Sierpinski</h2>
+<p class="text" style="color: #D2691E;">
+	Din punct de vedere al timpului de execuţie, pentru generarea acestui fractal este executată funcţia recursivă numită ”sierpinski”, aceasta aplelându-se de încă 3 ori pentru fiecare iteraţie. Astfel, pentru n iteraţii funcţia ”sierpinski” va fi apelată de 3n ori. Deducem astfel un ordin de complexitate exponenţial O(3<sup>n</sup>), asemănător cu cel al fractalului descris anterior, însă având baza cu o unitate mai mică.
+</p>
+<p class="text" style="color: #D2691E;">
+	Din punct de vedere al memoriei necesare, ”triunghiul lui Sierpinski” necesită mai mult spaţiu. Funcţia recursivă primeşte o variabilă de tip ”triunghi” ca parametru, mai sunt alocate încă trei variabile locale de acest tip şi 3 variaile de tip punct. Se ajunge astfel la 15 variabile de tip punct (considerând ca fiecare variabilă de tip triunghi conţine 3 variabile de tip punct), deci 30 de variabile de tip double însumând 240 de octeţi. Astfel, pentru executarea funcţiei „sierpinski” este necesar un spaţiu de (3n)*240 de octeţi, unde n est numărul de iteraţii
+</p>

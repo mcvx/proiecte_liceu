@@ -1,0 +1,57 @@
+.content-box > table {
+    margin: 0 3%;
+    width: 94%;
+    font-family: Linux Biolinum;
+}
+
+.content-box > table thead th {
+    font-size: 24px;
+    line-height: 46px;
+    text-align: left;
+    padding: 0 20px;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+    color: #6B5745;
+}
+
+.content-box > table thead tr {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.75);
+    background: rgba(205, 170, 125, 0.5);
+}
+
+.content-box > table tbody tr:nth-child(2n) {
+    background: rgba(205, 170, 125, 0.19);
+}
+
+.content-box > table tbody tr:nth-child(2n+1) {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/*.content-box > table tbody tr:hover {
+    cursor: pointer;
+    background: rgba(139, 115, 85, 0.35);
+}*/
+
+.content-box > table tbody td {
+    min-width: 160px;
+    padding: 8px 20px;
+    font-size: 20px;
+    line-height: 28px;
+    color: #5C4033;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+    vertical-align: middle;
+}
+
+.content-box > table tbody td:first-child {
+    color: #B21818;
+    font-size: 22px;
+}
+
+.content-box > table tbody td a {
+    text-decoration: none;
+    color: #5C4033;
+}
+
+.content-box > table tbody td a:hover {
+    text-decoration: none;
+    color: #B21818;
+}

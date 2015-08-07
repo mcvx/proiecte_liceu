@@ -1,0 +1,18 @@
+/* 	
+    poziţionează în tablou o valoare pe poziţia pe care o 
+	va ocupa în tabloul ordonat şi returnează respectiva
+	poziţie
+*/
+int poz(int x[], int i, int j);
+
+// metoda sortării rapide 
+void quicksort(int x[], int i, int j) {
+	if (i < j) {
+		int p = poz(x, i, j);
+		quicksort(x, i, p - 1);
+		quicksort(x, p + 1, j);
+	}
+}
+
+//apel 
+quicksort(x, 1, n);

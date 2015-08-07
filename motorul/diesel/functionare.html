@@ -1,0 +1,94 @@
+﻿<h1><a href="diesel/animatie.html" title="" class="lb">Functionare</a></h1>
+<div class="dots"></div>
+<p>&nbsp&nbspMotorul Diesel se mai numeste si <span class="blue">motor cu aprindere prin compresie (MAC).</span></p></br>
+<p>&nbsp&nbspMotorul Diesel functioneaza dupa 4 timpi:</p></br>
+<ul class="ulist">
+	<li class="blue">timpul I &rArr; admisia</li></br>
+	<li class="blue">timpul II &rArr; compresia</li></br>
+	<li class="blue">timpul III &rArr; arderea si detenta</li></br>
+	<li class="blue">timpul IV &rArr; evacuarea</li></br>
+</ul>
+<p>&nbsp&nbspTimpul III este singurul timp in care motorul cedeaza lucru mecanic in exterior si, din aceasta cauza, se numeste timp motor. In ceilalti timpi motorul trebuie sa primeasca lucru mecanic din exterior, fiind timpi morti.</p>
+<div class="dots"></div>
+<ul id="slider" style="height: 510px;">
+	<li>
+		<h2>Timpul I - Admisia</h2>
+		<div class="box first">&nbsp&nbsp&nbsp<span class="blue">Timpul I</span> incepe prin inchiderea supapei de evacuare, urmata imediat de deschiderea supapei de admisie si de deplasarea rapida a pistonului de la punctul mort superior (p.m.s.) la punctul mort inferior (p.m.i).</br>
+		&nbsp&nbsp&nbspIn cilindru se aspira aer din atomosfera.</br>
+		&nbsp&nbsp&nbspAdmisia se realizeaza practic la <span class="blue">presiune constanta</span> (presiunea atmosferica).
+		</div>
+		<div class="box second">
+			<img src="images/diesel-t1.png" alt=""/>
+		</div>
+	</li>
+	<li>
+		<h2>Timpul II - Compresia</h2>
+		<div class="box first">&nbsp&nbsp&nbsp<span class="blue">Timpul II</span> incepe cu inchiderea supapei de admisie. Pistonul  se deplaseaza rapid de la p.m.i. la p.m.s., comprimand aerul pana la 35-50 atm.</br>
+		&nbsp&nbsp&nbspDin cauza vitezei mari cu care se realizeaza comprimarea, in acest proces, practic, nu are loc schimb de caldura cu exteriorul, compresia fiind considerata un <span class="blue">proces adiabatic</span>.</br>
+		&nbsp&nbsp&nbspLa sfarsitul timpului II, amestecul carburant  ajunge la 700&#8451–800&#8451.
+		</div>
+		<div class="box second">
+			<img src="images/diesel-t2.png" alt=""/>
+		</div>
+	</li>
+	<li>
+		<h2 style="width: 405px;">Timpul III - <span class="ardere">Arderea</span> si <span class="detenta">detenta</span></h2>
+		<div id="arderea">
+			<div class="box first">&nbsp&nbsp&nbsp<span class="blue">ARDEREA</span> - In momentul in care pistonul este la p.m.s., pompa de injectie, prin injector, pulverizeaza picaturi foarte fine de motorina in cilindru.
+			Pe masura ce patrund, picaturile se incalzesc si se aprind, temperatura de 700&#8451 fiind mai mare decat temperatura de aprindere a motorinei. Arderea se produce lent, presiunea fiind practic constanta datorita 
+			deplasarii pistonului sub presiunea gazelor de ardere.</br>
+			&nbsp&nbsp&nbspLa sfarsitul arderii, temperatura este de 1500&#8451-2000&#8451.</br>
+			&nbsp&nbsp&nbsp Arderea poate fi considerata un proces izobar.
+			</div>
+			<div class="box second">
+				<img src="images/diesel-t3-1.png" alt=""/>
+			</div>
+		</div>
+		<div id="detenta">
+			<div class="box first">&nbsp&nbsp&nbsp<span class="blue">DETENTA</span> - Gazele provenite din ardere continua sa impinga pistonul de la p.m.s. la p.m.i.</br>
+			&nbsp&nbsp&nbspDin cauza vitezei mari cu care se deplaseaza pistonul, in acest proces, practic, nu are loc schimb de caldura cu exteriorul, detenta fiind considerata un <span class="blue">proces adiabatic</span>.</br>
+			&nbsp&nbsp&nbsp<span class="blue">Timpul III</span> este singurul <span class="blue">timp motor</span> al ciclului, în care se cedeaza <span class="blue">lucru mecanic in exterior</span>.
+			</div>
+			<div class="box second">
+				<img src="images/diesel-t3-2.png" alt=""/>
+			</div>
+		</div>
+	</li>
+	<li>
+		<h2>Timpul IV - Evacuarea</h2>
+		<div class="box first">&nbsp&nbsp&nbspLa inceputul <span class="blue">timpului IV</span>, supapa de evacuare se deschide cand pistonul este la p.m.i.</br>
+		&nbsp&nbsp&nbspEvacuarea are loc initial prin iesirea brusca a gazelor în atmosfera, intrucat presiunea in cilindru este mai mare decat presiunea atmosferica. Aceasta parte a timpului IV constituie un <span class="blue">proces izocor</span>.</br>
+		&nbsp&nbsp&nbspRestul gazelor sunt evacuate prin deplasarea pistonului de la p.m.i. la p.m.s., procesul realizandu-se la <span class="blue">presiune constanta</span>.
+		</div>
+		<div class="box second">
+			<img src="images/diesel-t4.png" alt=""/>
+		</div>
+	</li>
+	
+</ul>
+
+<script>
+	$(function(){
+		$('#slider').anythingSlider({
+			navigationSize      : 4,     // Set this to the maximum number of visible navigation tabs; false to disable
+			navigationFormatter : function(index, panel){ // Format navigation labels with text
+				return ['Timpul I', 'Timpul II', 'Timpul III', 'Timpul IV'][index - 1];
+			},
+			onSlideComplete: function(slider) {
+				// keep the current navigation tab in view
+				slider.navWindow( slider.currentPage );
+			}
+		});
+		$('#detenta').hide();
+		$('.ardere').click(function(){
+			$('#detenta').slideUp();
+			$('#arderea').slideDown(1000);
+		});
+		
+		$('.detenta').click(function(){
+			$('#arderea').slideUp();
+			$('#detenta').slideDown(1000);
+		});
+		$('h1 .lb').colorbox({iframe:true, width:"50%", height:"98%"});
+	});
+</script>

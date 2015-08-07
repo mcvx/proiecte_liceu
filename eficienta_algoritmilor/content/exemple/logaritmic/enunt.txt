@@ -1,0 +1,1 @@
+Se consideră un tablou unidimensional <span class="hgl red">x</span> de lungime <span class="hgl red">n</span>, ordonat crescător. Să se precizeze dacă valoarea <span class="hgl red">v</span> aparţine tabloului. 

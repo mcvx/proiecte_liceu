@@ -1,0 +1,14 @@
+<p class="text" style="color: #5D478B;">
+	Atât pentru triunghiul lui Serpinski, cât şi pentru fulgul lui Koch algoritmul de rezolvare incepe cu determinarea coordonatelor punctelor triunghiului initial echilateral. Presupunând o structura de date numită ”punct” care conţine campurile x și y de tip double şi 3 puncte A, B si C (variabile de tip punct).
+</p>
+<p class="text" style="color: #5D478B;">
+	Se atribuie celor 3 variabile coordonate astfel încât să ajungă vârfurile unui triunghi echilateral cu centrul în mijlocul ecranului.
+</p>
+<h2 class="text">Fulgul lui Koch</h2>
+<p class="text" style="color: #5D478B;">
+	Pentru fulgul lui Koch se va aplica pe fiecare latură (coordonatele capetelor acesteia) a triunghiului o funcţie recursivă (denumită în sursele programelor ”koch_line”) care împarte segmentul dat în 3 părţi egale, calculând coordonatele celor două puncte care îl vor împărţi şi determină coordonatele unui al 4-lea punct care impreună cu cele două calculate anterior formează un triunghi echilateral (vârful acestuia fiind către exteriorul figurii). Această funcţie este aplicată apoi pe cele 2 segmente rămase din segmentul iniţial şi cele două laturi ale triunghiului echilateral care au ca şi capăt cel de al 4-lea punct. Funcţia aceasta se va autoapela până când se ajunge la numărul de iteraţii dorit, număr care fie va fi dat de către utilizator, fie va fi constant în cadrul programului. După atingerea numărului de iteraţii, toate punctele determinate sunt unite generând astfel fulgul lui Koch.
+</p>
+<h2 class="text">Triunghiul lui Sierpinski</h2>
+<p class="text" style="color: #5D478B;">
+	În cazul triunghiului lui Sierpinski se mai declară un tip de date numit ”triunghi”, acesta conţinând 3 câmpuri de tip ”punct” denumite A, B şi C. Se stocheaza coordonatele triunghiului iniţial într-o variabilă de tip ”triunghi”, care este transmisă ca parametru funcţiei recursive (denumită în sursele programelor ”sierpinski”). Funcţia determină în variabile locale de tip ”punct” coordonatele mijloacelor laturilor triunghiului primit, apoi determină coordonatele celor 3 triunghiuri ”exterioare” formate în câte o variabilă de tip ”triunghi”. Urmează apelarea funcţiei pentru fiecare dintre cele 3 variabile de tip ”triunghi”, recursivitatea continuă până la atingerea numărului dorit de iteraţii care este fie preluat de la utilizator, fie este constant în interiorul programului. Desenarea triunghiului se poate face fie la înceutul funcţiei (dacă se doreşte desenarea fiecărui triunghi), fie la ieşirea din recursivitate (pentru a desena doar ultimul rând de triunghiuri). Pentru oricare dintre cele două variante, după executarea programului va fi afişat fractalul cunoscut sub numele de ”triunghiul lui Sierpinski”.
+</p>

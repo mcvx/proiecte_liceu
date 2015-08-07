@@ -1,0 +1,81 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Programare dinamica</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
+	<link href="css/style.css" rel="stylesheet" />
+	
+</head>
+
+<body class="impress-not-supported">
+
+	<div id="nav">
+		<ul>
+			<li><a href="introducere.html"><span class="icon info"></span>Introducere</a></li>
+			<li><a href="problema1.html"><span class="icon html"></span>Problema 1</a></li>
+			<li><a href="problema2.html"><span class="icon html"></span>Problema 2</a></li>
+			<li><a href="problema3.html"><span class="icon html"></span>Problema 3</a></li>
+			<li><a href="problema4.html"><span class="icon html"></span>Problema 4</a></li>
+			<li><a href="bibliografie.html"><span class="icon catalogue"></span>Bibliografie</a></li>
+		</ul>
+	</div>
+
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+	
+	<div id="impress">
+		
+		<div class="step" data-x="0" data-y="0" data-z="150" data-rotate="0" data-rotate-x="0" data-rotate-y="0" data-scale="1">
+			<h1 class="title">PROIECT DE GRUP</h1>
+			<h1 class="title" style="font-size: 60px; margin-bottom: 70px;">METODA PROGRAMARII DINAMICE</h1>
+			<div style="display: inline-block; float: left;">
+				<h2 class="title" style="font-size: 38px;">AUTORI</h3>
+				<h3 class="title">
+					<ul class="lista" style="font-size: 28px;">
+						<li>Creţu Alexandru</li>
+						<li>Dinu Ioan</li>
+						<li>Gall Mihnea</li>
+						<li>Pîrtoacă George</li>
+						<li>Roşca Ştefania</li>
+						<li>Văcaru Raluca</li>
+					</ul>
+				</h3>
+			</div>
+			<div style="display: inline-block; float: right;">
+				<h2 class="title" style="font-size: 38px;">ÎNDRUMĂTORI</h3>
+				<h3 class="title">
+					<ul class="lista" style="font-size: 28px;">
+						<li>Prof. Darie Simona</li>
+						<li>Prof. Pristavu Diana</li>
+					</ul>
+				</h3>
+			</div>
+		</div>
+
+	</div>
+	
+	<div class="hint">
+		<p>Use a spacebar or arrow keys to navigate</p>
+	</div>
+	
+	<script>
+		if ("ontouchstart" in document.documentElement) { 
+			document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+		}
+	</script>
+	<script src="js/impress.js"></script>
+	<script>impress().init();</script>
+
+</body>
+
+</html>

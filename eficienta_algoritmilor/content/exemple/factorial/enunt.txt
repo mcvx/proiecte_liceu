@@ -1,0 +1,1 @@
+Se consideră <span class="hgl red">n</span> natural nenul dat. Să se genereze toate permutările  mulţimii <span class="hgl red">{1,2,3,…,n}</span>.

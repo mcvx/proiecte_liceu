@@ -1,0 +1,33 @@
+[
+    { 
+        "question": "Ce ordin de complexitate are algoritmul la care numărul de operaţii nu depinde de dimensiunea datei de intrare n ?",
+        "answers": ["O(n)", "O(n<sup>3<\/sup>)", "O(1)", "O(0)"],
+        "theanswer": 3,
+        "details": ""
+    },
+    { 
+        "question": "Ce ordin de complexitate are sortarea prin metoda selecţiei maximului ?",
+        "answers": ["O(n)", "O(n<sup>2<\/sup>)", "O(1)", "O(log<sub>2<\/sub>n)"],
+        "theanswer": 2,
+        "details": ""
+    },
+    { 
+        "question": "Ce ordin de complexitate are secvenţa de mai jos ?",
+        "answers": ["O(n)", "O(n<sup>3<\/sup>)", "O(n<sup>2<\/sup>)", "O(1)"],
+        "theanswer": 4,
+        "details": "<pre name=\"code\" class=\"cpp\">\/*\tCalculul sumei cifrelor\n unui numar natural  n *\/\n\nint s = 0;\nwhile (n > 0) {\n\ts = s + n % 10;\n\tn = n \/ 10;\n}\n                                <\/pre>                   \n                                <script>\n                                    dp.SyntaxHighlighter.HighlightAll('code');\n                                <\/script>"
+    },
+    { 
+        "question": "Ce ordin de complexitate are secvenţa de mai jos ?",
+        "answers": ["O(n)", "O(n<sup>3<\/sup>)", "O(n<sup>2<\/sup>)", "O(1)"],
+        "theanswer": 1,
+        "details": "<pre name=\"code\" class=\"cpp\">\/*\n    Calculul valorii maxime dintr-un\n    fişier text ce conţine n numere\n    reale separate prin spaţiu\n*\/\nfloat x, max;\nifstream f(\"numere.txt\");\t\nf >> max;\nwhile (f >> x)\n\tif (x > max) max = x;\nf.close();\n                                <\/pre>                   \n                                <script>\n                                    dp.SyntaxHighlighter.HighlightAll('code');\n                                <\/script>"
+    },
+    { 
+        "question": "Aranjaţi, în ordinea descrescătoare a eficienţei ca timp, algoritmii din lista de mai jos. Selectaţi varianta corectă dintre opţiunile alăturate.",
+        "answers": ["1,2,3,4,5", "5,4,3,2,1", "2,5,1,3,4", "2,1,5,3,4"],
+        "theanswer": 3,
+        "details": "<ol class=\"enumerare\">\n    <li>algoritmul liniar<\/li>\n    <li>algoritmul constant<\/li>\n    <li>algoritmul supraliniar<\/li>\n    <li>algoritmul exponenţial<\/li>\n    <li>algoritmul logaritmic<\/li>\n<\/ol>"
+    }
+]
+            

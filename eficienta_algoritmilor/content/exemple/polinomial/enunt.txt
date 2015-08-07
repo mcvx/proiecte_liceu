@@ -1,0 +1,1 @@
+Se consideră un graf orientat cu <span class="hgl red">n</span> noduri reprezentat prin matricea de adiacenţă <span class="hgl red">A</span>. Să se determine matricea drumurilor.

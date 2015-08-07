@@ -1,0 +1,1 @@
+Se consideră un tablou unidimensional <span class="hgl red">x</span> de lungime <span class="hgl red">n (n > 10000)</span>. Să se ordoneze acesta crescător. 

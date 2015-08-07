@@ -1,0 +1,138 @@
+<h1>Randament</h1>
+<div class="dots"></div>
+<dl id="accordion1" class="accordion">
+
+	<dt><span>Ciclul ideal Otto</span></dt>
+	<dd>
+		<div class="block">
+			<img class="fll" src="images/ciclulotto.png" alt="" />
+			<ul class="lst flr">
+				<li>Timpul I - <span style="color: #3CB371">admisia</span></li>
+				<li>Timpul II - <span style="color: #FF7F00">compresia</span></li>
+				<li>Timpul III - <span style="color: #EE0000">arderea</span> si <span style="color: #912CEE">detenta</span></li>
+				<li>Timpul VI - <span style="color: #007FFF">evacuarea</span></li>
+			</ul>
+			<span class="flr box2" style="text-align: center;"><span class="blue">Raportul de compresie</span> este:</br>
+				<span class="blue">&epsilon; = <span class="fractie"><span class="nr">V<sub>1</sub></span>&frasl;<span class="num">V<sub>2</sub></span></span></span>
+			</span>
+			<span class="flr box2">
+				<span class="blue">Ciclul Otto este format din:</br>
+       				 	- 2 adiabate</br>
+        				- 2 izocore
+				</span>
+			</span>
+		</div>
+		<div class="block">
+			<ul id="faza" style="width: 520px; height: 215px;">
+				<li>
+					<span style="color: #3CB371">
+						Admisia &rarr; proces izobar</br>
+						<span style="padding-left: 108px;">Q<sub>01</sub> = &nu;C<sub>p</sub>(T<sub>1</sub> - T<sub>0</sub>)</span></br>
+						<span style="padding-left: 108px;">L<sub>01</sub> = p<sub>1</sub>(V<sub>1</sub> - V<sub>0</sub>)</span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #FF7F00">
+						Compresia &rarr; proces adiabatic</br>
+						<span style="padding-left: 131px;">L<sub>12</sub> = -&Delta;U<sub>12</sub> = &nu;C<sub>v</sub>(T<sub>1</sub> - T<sub>2</sub>)</span></br>
+						<span style="padding-left: 131px;">Q<sub>12</sub> = 0</span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #EE0000">
+						Arderea &rarr; proces izocor</br>
+						<span style="padding-left: 109px;">L<sub>23</sub> = 0</span></br>
+						<span style="padding-left: 109px;">Q<sub>23</sub> = &nu;C<sub>v</sub>(T<sub>3</sub> - T<sub>2</sub>)</span></br>
+						<span>- caldura primita: Q<sub>1</sub> = Q<sub>23</sub></span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #912CEE">
+						Detenta &rarr; proces adiabatic</br>
+						<span style="padding-left: 131px;">L<sub>34</sub> = -&Delta;U<sub>34</sub> = -&nu;C<sub>v</sub>(T<sub>4</sub> - T<sub>3</sub>)</span></br>
+						<span style="padding-left: 131px;">Q<sub>34</sub> = 0</span>
+					</span>
+				</li>
+				<li>
+					<span style="color: #007FFF">
+						Evacuarea &rarr; proces izocor(41) si proces izobar(10)</br>
+						<span style="padding-left: 135px;">Q<sub>41</sub> = -&nu;C<sub>v</sub>(T<sub>1</sub> - T<sub>4</sub>)</span></br>
+						<span style="padding-left: 135px;">L<sub>41</sub> = 0</span></br>
+						<span style="padding-left: 135px;">Q<sub>10</sub> = -&nu;C<sub>p</sub>(T<sub>0</sub> - T<sub>1</sub>)</span></br>
+						<span style="padding-left: 135px;">L<sub>10</sub> = p<sub>1</sub>(V<sub>0</sub> - V<sub>1</sub>)</span></br>
+						<span>- caldura cedata: Q<sub>2</sub> = Q<sub>41</sub></span>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</dd>
+
+	<dt><span>Demonstrarea formulei randamentului ciclului Otto</span></dt>
+	<dd>
+		<img class="fll" src="images/ciclulotto.png" alt="" />
+		<span class="box2 flr">
+			&eta; = 1 - <span class="fractie"><span class="nr">|Q<sub>ced</sub>|</span>&frasl;<span class="num">Q<sub>abs</sub></span></span></br>
+			Q<sub>abs</sub> = Q<sub>23</sub> = &nu;C<sub>v</sub>(T<sub>3</sub> - T<sub>2</sub>) = &nu; <span class="fractie"><span class="nr">R</span>&frasl;<span class="num">&gamma;-1</span></span> (T<sub>3</sub> - T<sub>2</sub>)</br>
+			|Q<sub>ced</sub> = |Q<sub>41</sub>| = &nu;C<sub>v</sub>(T<sub>4</sub> - T<sub>1</sub>) = &nu; <span class="fractie"><span class="nr">R</span>&frasl;<span class="num">&gamma;-1</span></span> (T<sub>4</sub> - T<sub>1</sub>)</br>
+			&eta; = 1 - <span class="fractie"><span class="nr">T<sub>4</sub> - T<sub>1</sub></span>&frasl;<span class="num">T<sub>3</sub> - T<sub>2</sub></span></span></br>
+			<span class="blue">1-2:</span> T<sub>1</sub>V<sub>1</sub><sup>&gamma;-1</sup> = T<sub>2</sub>V<sub>2</sub><sup>&gamma;-1</sup> &rArr; <span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span>
+			= (<span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">V<sub>1</sub></span></span>)<sup>&gamma;-1</sup> = <span class="fractie"><span class="nr">1</span>&frasl;<span class="num">&epsilon;<sup>&gamma;</sup> - 1</span></span></br>
+			<span class="blue">2-3:</span> <span class="fractie"><span class="nr">p<sub>2</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span> = <span class="fractie"><span class="nr">p<sub>3</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span></br>
+			<span class="blue">3-4:</span> T<sub>3</sub>V<sub>2</sub><sup>&gamma;-1</sup> = T<sub>4</sub>V<sub>1</sub><sup>&gamma;-1</sup> &rArr; <span class="fractie"><span class="nr">T<sub>4</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span>
+			= (<span class="fractie"><span class="nr">V<sub>2</sub></span>&frasl;<span class="num">V<sub>1</sub></span></span>)<sup>&gamma;-1</sup> = <span class="fractie"><span class="nr">1</span>&frasl;<span class="num">&epsilon;<sup>&gamma;</sup> - 1</span></span></br>
+			<span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>2</sub></span></span> = <span class="fractie"><span class="nr">T<sub>4</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span> &rArr; 
+			<span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>4</sub></span></span> = <span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span></br>
+			&eta; = 1 - <span class="fractie"><span class="nr">T<sub>4</sub>(1 - 
+				<span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>4</sub></span></span>)
+			</span>&frasl;<span class="num">T<sub>3</sub>(1 -
+				<span class="fractie"><span class="nr">T<sub>2</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span>)
+			</span></span> = 1 - <span class="fractie"><span class="nr">T<sub>4</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span> = <span class="fractie"><span class="nr">1</span>&frasl;<span class="num">&epsilon;<sup>&gamma;</sup> - 1</span></span></br>
+			</br>
+			&eta;<sub>c</sub> = 1 - <span class="fractie"><span class="nr">T<sub>1</sub></span>&frasl;<span class="num">T<sub>3</sub></span></span> > &eta;(T<sub>1</sub> < T<sub>4</sub>)
+		</span>
+	</dd>
+
+	<dt><span>Alte caracteristici</span></dt>
+	<dd>
+		<div class="block">
+			<h2 style="margin-bottom: 10px; margin-left: 15px;">Bilantul energetic in ciclul real Otto</h2>
+			<img src="images/bilant.png" class="boxspc" style="width: 863px; margin-left: 40px; margin-bottom: 15px;" alt="" />
+			<h2 style="margin-bottom: 10px; margin-left: 15px;">Marirea randamentului motorului Otto</h2>
+			<span class="box2 boxspc" style="width: 863px; margin-left: 15px;">
+				&nbsp&nbsp&nbspPuterea motorului Otto poate fi marita prin marirea cantitatii de amestec carburant introdus in cilindru.</br>
+				&nbsp&nbsp&nbspRandamentul ciclului real al motorului Otto depinde de: raportul de compresie, de natura combustibilului, de presiunea atmosferica, 
+				(la altitudine, randamentul se micsoreaza din cauza rarefierii aerului).</br>
+				&nbsp&nbsp&nbspAutoaprinderea combustibilului inaintea producerii scanteii de catre bujie duce la micsorarea randamentului real.
+			</span>
+			<img class="fll" style="margin-top: 10px; margin-left: 15px;" src="images/grf.png" alt="" />
+			<span class="flr box2" style="margin-top: 54px; width: 500px; margin-right: 15px;">
+				&nbsp&nbsp&nbspRandamentul ciclului real al motorului Otto se poate mari prin marirea raportului de compresie.</br>
+				&nbsp&nbsp&nbspIn practica, acesta nu poate fi marit foarte mult, deoarece se produce o crestere considerabila a temperaturii in timpul
+				compresiei, putand aparea autoaprinderea combustibilului. Valorile raportului de compresie sunt 7-12.
+			</span>
+		</div>
+	</dd>
+
+</dl>
+<script>
+$(document).ready(function() {
+	$('.accordion dd').hide();
+	$('.accordion dd:first-of-type').show();
+	$('.accordion dt').click(function(){
+		$('.accordion dd').hide();
+		$(this).next().show();
+		return false;
+	});
+	
+	$('#faza').anythingSlider({
+		navigationSize      : 5,     // Set this to the maximum number of visible navigation tabs; false to disable
+		navigationFormatter : function(index, panel){ // Format navigation labels with text
+			return ['Admisia', 'Compresia', 'Arderea', 'Detenta', 'Evacuarea'][index - 1];
+		},
+		onSlideComplete: function(slider) {
+			// keep the current navigation tab in view
+			slider.navWindow( slider.currentPage );
+		}
+	});
+});
+</script>

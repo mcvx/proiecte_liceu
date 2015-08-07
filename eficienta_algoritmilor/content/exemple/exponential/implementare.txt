@@ -1,0 +1,17 @@
+/*	
+    Tehnica backtracking- generare produs cartezian de n-1 
+    mulţimi fiecare fiind de cardinal 2 
+*/
+
+void back(int k) {
+	for (int i = 0; i <= 1; i++) {
+		x[k] = i;
+		if (k < n)
+            back(k + 1);
+		else
+		    solutie();
+	}
+}
+
+//apel 
+x[1] = 1; back(2);

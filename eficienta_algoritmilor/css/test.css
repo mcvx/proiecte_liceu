@@ -1,0 +1,125 @@
+.content-box .item .top-area {
+    background-color: rgba(205, 170, 125, 0.35);
+}
+
+.content-box .item .top-area h2 {
+    color: #8B3E2F;
+    margin-bottom: 0;
+}
+
+.content-box .item .details {
+    display: inline-block;
+    width: 48%;
+    padding: 0 1%;
+    float: left;
+}
+
+.content-box .item .answers {
+    display: inline-block;
+    width: 48%;
+    padding: 19px 1%;
+    float: left;
+    font-family: Linux Biolinum;
+    font-size: 22px;
+    color: #000;
+}
+
+.content-box .item .answers span {
+    display: block;
+    width: 96%;
+    border: 1px dotted rgba(0, 0, 0, 0.25);
+    padding: 8px 2%;
+    margin-bottom: 5px;
+    background-color: rgba(205, 170, 125, 0.19);
+    color: #5C4033;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.content-box .item .answers span.available:hover {
+    background-color: rgba(139, 115, 85, 0.5);
+    cursor: pointer;
+}
+
+.content-box .item .answers span.selected {
+    background-color: rgba(205, 170, 125, 0.75);
+}
+
+.content-box .item .answers span.true {
+    background-color: rgba(124, 205, 124, 0.5);
+}
+
+.content-box .item .answers span.false {
+    background-color: rgba(205, 51, 51, 0.5);
+}
+
+.content-box .item .msg span.true {
+    color: #008B45;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.content-box .item .msg span.false {
+    color: #CD2626;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.content-box .item .msg span.warning {
+    color: #8B6508;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.content-box .item .answers span:last-child {
+    margin-bottom: 0;
+}
+
+.content-box .item .middle-area {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.content-box .item .bottom-area {
+    display: block;
+    background-color: rgba(205, 170, 125, 0.35);
+    width: 100%;
+    padding: 4px 0;
+}
+
+.content-box .item .stats, .content-box .item .msg {
+    float: left;
+    font-family: Nilland;
+    font-size: 20px;
+    padding: 8px 10px;
+    color: #8B3E2F;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.content-box #rezultat {
+    text-align: center;
+    font-family: Linux Biolinum;
+    font-size: 32px;
+    padding: 60px 0;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255, 255, 255, 0.5);
+    color: #6B5745;
+    background-color: rgba(205, 170, 125, 0.5);
+    border-left: 6px solid rgba(0, 0, 0, 0.25);
+}
+
+.content-box .item .answers input[type=radio] {
+    margin: 6px 5px;
+}
+
+.content-box .item input[type=submit] {
+    float: right;
+    border: 1px dotted rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-right: 0.75%;
+    font-family: Nilland;
+    font-size: 20px;
+    color: #000;
+}
+
+.content-box .item .details ol.enumerare {
+    padding: 20px 30px;
+    font-family: Linux Biolinum;
+    font-size: 24px;
+    color: #222;
+}

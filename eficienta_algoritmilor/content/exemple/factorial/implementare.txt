@@ -1,0 +1,19 @@
+/*
+    Tehnica backtracking- generare permutările unei mulţimi
+    de cardinal n
+*/
+
+void back(int k) {
+    for (int i = 1; i <= n; i++) {
+	    x[k] = i;
+		if (valid(k)) {
+		    if (k < n)
+		        back(k + 1);
+			else
+			    solutie();
+	    }
+	}
+}
+
+//apel 
+back(1);

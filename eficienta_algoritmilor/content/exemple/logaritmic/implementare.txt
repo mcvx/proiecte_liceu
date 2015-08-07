@@ -1,0 +1,14 @@
+int apare = 0, i = 1, j = n, m;
+
+// căutare binară
+while (i <= j) {
+    m = (i + j) / 2;
+	if (x[m] == v) {
+		apare = 1;
+		break;
+	}
+	else if (x[m] > v)
+        j = m - 1;
+	else 
+	    i = m + 1;
+}

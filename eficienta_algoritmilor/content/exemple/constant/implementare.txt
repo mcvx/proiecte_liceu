@@ -1,0 +1,6 @@
+int n;  
+cin >> n;
+
+// suma lui Gauss
+int s = n * (n + 1) / 2;
+cout << s;

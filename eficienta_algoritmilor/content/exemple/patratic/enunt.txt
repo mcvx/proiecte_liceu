@@ -1,0 +1,1 @@
+Se consideră un cuvânt alcătuit din cel mult <span class="hgl red">25</span> de litere mici. Să se afişeze anagrama cuvântului ce are proprietatea că literele sunt ordonate alfabetic.
